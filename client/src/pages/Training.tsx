@@ -45,7 +45,12 @@ export default function Training() {
                   </li>
                 ))}
               </ul>
-              <div className="text-3xl font-bold text-primary mb-2">₹1,499</div>
+              <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 mb-6">
+                <p className="text-sm font-semibold text-primary">
+                  Includes small farm model starting with trays and seeds.
+                </p>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">₹12,000</div>
               <Link href="/contact">
                 <Button className="w-full mt-4">Enquire Now</Button>
               </Link>
@@ -73,10 +78,11 @@ export default function Training() {
                   </li>
                 ))}
               </ul>
-              <div className="text-3xl font-bold text-white mb-2 relative z-10">₹4,999</div>
-              <Link href="/contact">
-                <Button variant="secondary" className="w-full mt-4 relative z-10 font-bold">Enquire Now</Button>
-              </Link>
+              <div className="mt-8">
+                <Link href="/contact">
+                  <Button variant="secondary" className="w-full relative z-10 font-bold">Contact Us</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

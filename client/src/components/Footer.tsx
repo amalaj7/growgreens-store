@@ -1,6 +1,6 @@
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "wouter";
-import logoImage from "@assets/logo_1769521839952.png";
+import logoImage from "@assets/logo.png";
 
 export function Footer() {
   return (
@@ -31,6 +31,7 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-6 text-secondary">Explore</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/story" className="text-primary-foreground/80 hover:text-white transition-colors cursor-pointer">Our Story</Link></li>
+              <li><Link href="/products" className="text-primary-foreground/80 hover:text-white transition-colors cursor-pointer">Our Products</Link></li>
               <li><Link href="/training" className="text-primary-foreground/80 hover:text-white transition-colors cursor-pointer">Training & Workshops</Link></li>
               <li><Link href="/subscription" className="text-primary-foreground/80 hover:text-white transition-colors cursor-pointer">Subscription</Link></li>
               <li><Link href="/gallery" className="text-primary-foreground/80 hover:text-white transition-colors cursor-pointer">Gallery</Link></li>

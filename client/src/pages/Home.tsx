@@ -136,7 +136,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/50 text-secondary text-sm font-semibold mb-6 backdrop-blur-sm">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-secondary text-primary text-sm font-bold mb-6 shadow-lg uppercase tracking-wider">
               India's Leading Microgreens Farm
             </span>
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight text-white">

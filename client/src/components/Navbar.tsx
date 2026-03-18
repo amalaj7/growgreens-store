@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/logo_1769521839952.png";
+import logoImage from "@assets/logo.png";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/story", label: "Our Story" },
+  { href: "/products", label: "Our Products" },
   { href: "/training", label: "Training" },
   { href: "/subscription", label: "Subscription" },
   { href: "/gallery", label: "Gallery" },
@@ -46,11 +47,16 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center group cursor-pointer">
+        <Link 
+          href="/" 
+          className={`flex items-center group cursor-pointer transition-all duration-300 rounded-2xl ${
+            !isSolid ? "bg-white/90 backdrop-blur-md px-3 py-1.5 shadow-lg" : ""
+          }`}
+        >
           <img 
             src={logoImage} 
             alt="Grow Greens" 
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-12 md:h-16 w-auto object-contain hover:scale-105 transition-transform"
           />
         </Link>
 

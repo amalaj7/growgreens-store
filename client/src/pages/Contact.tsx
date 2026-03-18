@@ -8,12 +8,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactRequestSchema, type InsertContactRequest } from "@shared/schema";
-import { useContactSubmit } from "@/hooks/use-contact";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import heroImg from "/images/hero_microgreens.jpg";
 
 export default function Contact() {
-  const { mutate, isPending } = useContactSubmit();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<InsertContactRequest>({
     resolver: zodResolver(insertContactRequestSchema),
@@ -26,10 +28,49 @@ export default function Contact() {
     }
   });
 
-  const onSubmit = (data: InsertContactRequest) => {
-    mutate(data, {
-      onSuccess: () => form.reset()
-    });
+  const onSubmit = async (data: InsertContactRequest) => {
+    setIsSubmitting(true);
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdL4_vySt9irPcW0gNrJJX2-Wfq0X-UykXGirYQ4IC_LX-X-g/formResponse";
+    
+    // Create URLSearchParams for form data
+    const formData = new URLSearchParams();
+    formData.append("entry.25911088", data.name);
+    formData.append("entry.1052839930", data.email);
+    formData.append("entry.242468177", data.phone || "");
+    
+    // Map type to exact Google Form values provided in DOM
+    const typeMap: Record<string, string> = {
+      "subscription": "Subscription",
+      "training": "Training",
+      "general": "General Inquiry"
+    };
+    formData.append("entry.1135467792", typeMap[data.type] || "General Inquiry");
+    formData.append("entry.1018339571", data.message);
+
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formData
+      });
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We will get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -177,8 +218,8 @@ export default function Contact() {
                   )}
                 />
 
-                <Button type="submit" className="w-full rounded-lg h-12 text-base font-semibold" disabled={isPending}>
-                  {isPending ? "Sending..." : "Send Message"}
+                <Button type="submit" className="w-full rounded-lg h-12 text-base font-semibold" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Form>
