@@ -1,10 +1,14 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SEO } from "@/components/SEO";
 import { 
   Leaf, Home, Sprout, Nut, Droplets, Wheat, Carrot, 
-  Settings, Box, PackageOpen, Layers, Flower2
+  Settings, Box, PackageOpen, Layers, Flower2,
+  ArrowRight
 } from "lucide-react";
 import { easeIn, motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
 const products = [
   { name: "Live Microgreens", icon: Leaf, desc: "Fresh, nutrient-packed microgreens harvested right at your home." },
@@ -24,6 +28,11 @@ const products = [
 export default function Products() {
   return (
     <div>
+      <SEO 
+        title="Our Products" 
+        description="Fresh live microgreens, sprouts, small farm models, and accessories to grow your own superfoods."
+        path="/products"
+      />
       <PageHeader 
         title="Our Products" 
         subtitle="Farm Fresh to Your Doorstep"
@@ -57,6 +66,24 @@ export default function Products() {
             );
           })}
         </div>
+
+        {/* Contact CTA */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-20 text-center bg-secondary/10 rounded-3xl p-12 border border-secondary/20"
+        >
+          <h2 className="text-3xl font-bold mb-4">Interested in our products?</h2>
+          <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+            Get in touch with us for bulk orders, custom requirements, or any questions about our offerings.
+          </p>
+          <Link href="/contact?type=products">
+            <Button size="lg" className="rounded-full px-8 py-6 text-lg font-semibold group">
+              Contact Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </motion.div>
       </Section>
     </div>
   );

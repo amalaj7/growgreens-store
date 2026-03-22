@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,14 +10,18 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactRequestSchema, type InsertContactRequest } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import heroImg from "/images/hero_microgreens.jpg";
 
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+  const [location] = useLocation();
+  const searchParams = new URLSearchParams(window.location.search);
+  const initialType = searchParams.get("type") || "general";
+
   const form = useForm<InsertContactRequest>({
     resolver: zodResolver(insertContactRequestSchema),
     defaultValues: {
@@ -24,9 +29,18 @@ export default function Contact() {
       email: "",
       phone: "",
       message: "",
-      type: "general"
+      type: initialType
     }
   });
+
+  // Update type if it changes in URL (e.g. if navigating within the same component)
+  useEffect(() => {
+    const currentParams = new URLSearchParams(window.location.search);
+    const typeFromUrl = currentParams.get("type");
+    if (typeFromUrl && ["general", "products", "subscription", "training"].includes(typeFromUrl)) {
+      form.setValue("type", typeFromUrl);
+    }
+  }, [location, form]);
 
   const onSubmit = async (data: InsertContactRequest) => {
     setIsSubmitting(true);
@@ -42,6 +56,7 @@ export default function Contact() {
     const typeMap: Record<string, string> = {
       "subscription": "Subscription",
       "training": "Training",
+      "products": "Products",
       "general": "General Inquiry"
     };
     formData.append("entry.1135467792", typeMap[data.type] || "General Inquiry");
@@ -75,6 +90,11 @@ export default function Contact() {
 
   return (
     <div>
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Grow Greens. Reach out for microgreens subscription, training workshops, and product inquiries in Kerala."
+        path="/contact"
+      />
       <PageHeader 
         title="Get In Touch" 
         subtitle="We'd love to hear from you"
@@ -145,7 +165,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your Name" className="rounded-lg" {...field} />
+                        <Input placeholder="Your Name" className="rounded-lg h-12 text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -160,7 +180,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="your@email.com" className="rounded-lg" {...field} />
+                          <Input placeholder="your@email.com" className="rounded-lg h-12 text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -173,7 +193,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Phone (Optional)</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91..." className="rounded-lg" {...field} value={field.value || ''} />
+                          <Input placeholder="+91..." className="rounded-lg h-12 text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} value={field.value || ''} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -189,12 +209,13 @@ export default function Contact() {
                       <FormLabel>Inquiry Type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="rounded-lg">
+                          <SelectTrigger className="rounded-lg h-12 text-base border-primary/20 bg-white focus:ring-primary/50 transition-colors shadow-sm">
                             <SelectValue placeholder="Select type" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           <SelectItem value="general">General Inquiry</SelectItem>
+                          <SelectItem value="products">Our Products</SelectItem>
                           <SelectItem value="subscription">Subscription (Kerala)</SelectItem>
                           <SelectItem value="training">Training & Workshops</SelectItem>
                         </SelectContent>
@@ -211,7 +232,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="How can we help you?" className="min-h-[120px] rounded-lg" {...field} />
+                        <Textarea placeholder="How can we help you?" className="min-h-[140px] rounded-lg text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

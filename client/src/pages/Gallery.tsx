@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
 
 const galleryImages = [
@@ -30,6 +31,11 @@ const galleryImages = [
 export default function Gallery() {
   return (
     <div>
+      <SEO 
+        title="Green Gallery" 
+        description="A glimpse into our urban microgreens farm. Fresh daily harvests, growing trays, and packed greens ready for delivery."
+        path="/gallery"
+      />
       <PageHeader 
         title="Green Gallery" 
         subtitle="A Glimpse into our Urban Farm"

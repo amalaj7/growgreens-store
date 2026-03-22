@@ -1,11 +1,17 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SEO } from "@/components/SEO";
 import heroImg from "/images/hero_microgreens.jpg";
 import founderImg from "/images/ajay-image.webp";
 
 export default function Story() {
   return (
     <div>
+      <SEO 
+        title="Our Story" 
+        description="From corporate banking to urban farming. Learn about Ajay Gopinath's journey and the philosophy behind Grow Greens."
+        path="/story"
+      />
       <PageHeader 
         title="Our Story" 
         subtitle="From Corporate Banking to Urban Farming"

@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center">
@@ -57,23 +57,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-bold text-lg mb-6 text-secondary">Stay Updated</h4>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Join our community of urban farmers.
-            </p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-white/10 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-secondary text-white placeholder:text-white/50"
-              />
-              <button className="bg-secondary text-primary-foreground font-bold px-4 py-2 rounded-lg hover:bg-secondary/90 transition-colors">
-                Go
-              </button>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">

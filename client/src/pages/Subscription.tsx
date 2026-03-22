@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 const subscriptionFeatures = [
   {
@@ -121,7 +124,7 @@ const varieties = [
   { 
     name: "Turnip", 
     desc: "Fresh and mildly sweet",
-    image: "/images/varieties/turnip.jpg"
+    image: "/images/varieties/turnip.webp"
   },
   { 
     name: "Radish White", 
@@ -131,12 +134,12 @@ const varieties = [
   { 
     name: "Radish Red", 
     desc: "Bold color with spicy kick",
-    image: "/images/varieties/radish-red.jpg"
+    image: "/images/varieties/radish-red.webp"
   },
   { 
     name: "Radish Pink", 
     desc: "Delicate taste with vibrant color",
-    image: "/images/varieties/radish-pink.jpg"
+    image: "/images/varieties/radish-pink.jpeg"
   },
   { 
     name: "Radish China Rose", 
@@ -156,21 +159,26 @@ const varieties = [
   { 
     name: "Mix Microgreens", 
     desc: "Variety of flavors and colors",
-    image: "/images/varieties/mix-microgreens.jpg"
+    image: "/images/varieties/mix-microgreens.webp"
   },
   { 
     name: "Health Mix Microgreens", 
     desc: "Nutrient-packed superfood blend",
-    image: "/images/varieties/health-mix-microgreens.jpg"
+    image: "/images/varieties/health-mix-microgreens.avif"
   },
 ];
 
 export default function Subscription() {
   return (
     <div className="w-full bg-gray-50 pt-24">
+      <SEO 
+        title="Microgreens Subscription" 
+        description="Get fresh, nutrient-rich microgreens delivered to your doorstep weekly. Choose from 11 organic varieties."
+        path="/subscription"
+      />
       {/* Subscription Model Section */}
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-3">Simple Subscription Model</h2>
+        <h2 className="text-4xl font-bold text-center mb-3">Subscription Model</h2>
         <p className="text-center text-gray-600 mb-12">Fresh microgreens delivered weekly at an affordable price</p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -198,9 +206,11 @@ export default function Subscription() {
               ))}
             </div>
             
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition duration-200">
-              Subscribe Now
-            </button>
+            <Link href="/contact?type=subscription">
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-lg transition duration-200">
+                Subscribe Now
+              </Button>
+            </Link>
           </div>
 
           {/* What's Included Card */}
@@ -216,17 +226,16 @@ export default function Subscription() {
               ))}
             </ul>
             
-            <div className="bg-green-600 text-white rounded-xl p-8 text-center">
-              <div className="text-5xl font-bold">11</div>
-              <div className="text-lg mt-2">Varieties Available</div>
-              <div className="mt-6 grid grid-cols-3 gap-3">
-                {varieties.slice(0, 6).map((v) => (
-                  <div key={v.name} className="text-xs font-semibold truncate opacity-90" title={v.name}>
-                    {v.name.length > 10 ? v.name.substring(0, 8) + "..." : v.name}
-                  </div>
+            <div className="bg-green-600 text-white rounded-xl p-8 text-center shadow-inner">
+              <div className="text-6xl font-extrabold drop-shadow-md">11</div>
+              <div className="text-xl font-bold mt-2 tracking-wide">Varieties Available</div>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                {varieties.map((v) => (
+                  <span key={v.name} className="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-full text-sm font-semibold shadow-sm backdrop-blur-sm cursor-default">
+                    {v.name}
+                  </span>
                 ))}
               </div>
-              <div className="text-xs mt-3 opacity-75">+ 5 more varieties</div>
             </div>
           </div>
         </div>

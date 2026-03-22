@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Sprout, ShoppingBag, BookOpen, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 import heroImg from "/images/hero_microgreens.jpg";
 
 const harvestImages = [
@@ -118,6 +119,11 @@ export default function Home() {
 
   return (
     <div>
+      <SEO 
+        title="India's Leading Microgreens Farm" 
+        description="Join the green revolution with premium organic microgreens grown with passion and precision. Farm fresh to your doorstep in Kerala."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
         <div className="absolute inset-0 z-0">
@@ -214,6 +220,14 @@ export default function Home() {
               </p>
             </motion.a>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link href="/featured">
+            <Button variant="outline" className="text-lg px-8 py-6 rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+              Read All Featured Articles <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </Section>
 

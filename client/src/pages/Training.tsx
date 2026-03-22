@@ -1,17 +1,22 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
-import workshopImg from "/images/training_workshop.jpg";
 
 export default function Training() {
   return (
     <div>
+      <SEO 
+        title="Training & Workshops" 
+        description="Learn the art of microgreens farming with our comprehensive workshops. We empower new farmers to grow healthy superfoods."
+        path="/training"
+      />
       <PageHeader 
         title="Training & Workshops" 
         subtitle="Learn the Art of Microgreens Farming"
-        image={workshopImg}
+        image="/images/training_workshop.jpg"
       />
 
       <Section>
@@ -51,7 +56,7 @@ export default function Training() {
                 </p>
               </div>
               <div className="text-3xl font-bold text-primary mb-2">₹12,000</div>
-              <Link href="/contact">
+              <Link href="/contact?type=training">
                 <Button className="w-full mt-4">Enquire Now</Button>
               </Link>
             </div>
@@ -79,7 +84,7 @@ export default function Training() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Link href="/contact">
+                <Link href="/contact?type=training">
                   <Button variant="secondary" className="w-full relative z-10 font-bold">Contact Us</Button>
                 </Link>
               </div>
