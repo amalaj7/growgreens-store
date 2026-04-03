@@ -16,7 +16,7 @@ const galleryImages = [
   { src: "/images/gallery/PBlUhUz76t2FA9qq2vu2.webp", label: "Farm Setup", category: "Farm" },
   { src: "/images/gallery/7IHIJhbXEV2zmn4jx9mL.webp", label: "Grow Greens Outlet", category: "Store" },
   { src: "/images/gallery/WxD4SbwuhyEKM5YBV9h4.webp", label: "Retail Display", category: "Store" },
-  { src: "/images/gallery/grow-greens-eatery_1769521820166.png", label: "Grow Greens Eatery", category: "Store" },
+
   { src: "/images/gallery/grow-greens-south-chittoor-ernakulam-microgreen-wholesalers-5xrg8g2lnp.jpg", label: "Microgreen Close-up", category: "Products" },
   { src: "/images/gallery/grow-greens-south-chittoor-ernakulam-microgreen-wholesalers-q6o64rgvo9.jpg", label: "Packed Greens", category: "Products" },
   { src: "/images/gallery/grow-greens-south-chittoor-ernakulam-microgreen-wholesalers-zgwxvmt8oc.jpg", label: "Daily Harvest", category: "Farm" },
@@ -26,6 +26,12 @@ const galleryImages = [
   { src: "/images/gallery/grow-greens-south-chittoor-ernakulam-microgreen-wholesalers-15ylsahj05.avif", label: "Microgreen Trays", category: "Farm" },
   { src: "/images/gallery/Microgreens.jpg.webp", label: "Vibrant Microgreens", category: "Products" },
   { src: "/images/gallery/TNIE_import_uploads_user_ckeditor_images_article_2021_10_22_DRTYSH.avif", label: "In The Press", category: "Media" },
+  { src: "/images/Pics/sprouts%20(2).jpg", label: "Fresh Sprouts", category: "Products" },
+  { src: "/images/Pics/flowers%20(2).jpg", label: "Edible Flowers", category: "Products" },
+  { src: "/images/Pics/home-installation-1.jpg", label: "Home Farm Setup", category: "Farm" },
+  { src: "/images/Pics/pearl-millet.jpg", label: "Pearl Millet", category: "Products" },
+  { src: "/images/ajay-image-5.jpg", label: "Founder in Action", category: "Farm" },
+  { src: "/images/Pics/microgreens-varities%20(12).jpg", label: "Assorted Greens", category: "Products" },
 ];
 
 export default function Gallery() {

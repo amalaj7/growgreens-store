@@ -13,9 +13,10 @@ export interface ContactRequest {
   id: number;
   name: string;
   email: string;
-  phone: string | null;
+  phone: string;
   message: string;
   type: string;
+  state?: string;
 }
 
 export const insertProductSchema = z.object({
@@ -27,11 +28,12 @@ export const insertProductSchema = z.object({
 });
 
 export const insertContactRequestSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  phone: z.string().optional().nullable(),
-  message: z.string(),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(1, "Phone number is required"),
+  message: z.string().min(1, "Message is required"),
   type: z.string(),
+  state: z.string().optional(),
 });
 
 export type InsertProduct = z.infer<typeof insertProductSchema>;

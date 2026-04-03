@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -5,6 +6,7 @@ import { ArrowRight, Sprout, ShoppingBag, BookOpen, ExternalLink } from "lucide-
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import heroImg from "/images/hero_microgreens.jpg";
+import logoImage from "@assets/logo.png";
 
 const harvestImages = [
   { src: "/images/gallery/grow-greens-south-chittoor-ernakulam-microgreen-wholesalers-7e2dwdnuo3.jpg", name: "Pea Shoots", desc: "Tender & sweet" },
@@ -13,7 +15,21 @@ const harvestImages = [
   { src: "/images/gallery/EsbPnzVdmX5sSc7z7DaV.webp", name: "Mixed Microgreens", desc: "Nutrient-packed blend" },
 ];
 
+const awardHeroImages = [
+  "/images/Pics/award.jpg",
+  "/images/Pics/award-2.jpg",
+  "/images/Pics/awards-3.jpg"
+];
+
 export default function Home() {
+  const [currentAwardIndex, setCurrentAwardIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentAwardIndex((prev) => (prev + 1) % awardHeroImages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
 
   const whyChoose = [
     { 
@@ -28,13 +44,13 @@ export default function Home() {
     },
     { 
       icon: "🛡️", 
-      title: "No Pesticides, No Fertilizers", 
+      title: "No Pesticides, No Fertilisers", 
       desc: "Pure and safe microgreens for you and your family" 
     },
     { 
       icon: "🌾", 
       title: "Non-GMO Seeds", 
-      desc: "Open pollinated seeds ensuring natural growth and authentic flavors" 
+      desc: "Non-hybrid, non-treated, open pollinated (OP) seeds ensuring natural growth and authentic flavors" 
     },
     { 
       icon: "💰", 
@@ -121,13 +137,13 @@ export default function Home() {
     <div>
       <SEO 
         title="India's Leading Microgreens Farm" 
-        description="Join the green revolution with premium organic microgreens grown with passion and precision. Farm fresh to your doorstep in Kerala."
+        description="Join the green revolution with Premium Organic Microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath. Farm fresh to your doorstep."
         path="/"
       />
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 z-10" />
           <img 
             src={heroImg} 
             alt="Fresh Lush Microgreens" 
@@ -135,12 +151,12 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-20 text-white">
+        <div className="container mx-auto px-4 relative z-20 text-white flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="flex-1 max-w-2xl"
           >
             <span className="inline-block py-1.5 px-4 rounded-full bg-secondary text-primary text-sm font-bold mb-6 shadow-lg uppercase tracking-wider">
               India's Leading Microgreens Farm
@@ -150,7 +166,7 @@ export default function Home() {
               <span className="text-secondary">One Tiny Leaf</span> at a Time.
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl font-light">
-              Join the green revolution with premium organic microgreens grown with passion and precision by Ajay Gopinath.
+              Join the green revolution with Premium Organic Microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/subscription">
@@ -164,6 +180,37 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-1 hidden md:flex flex-col items-center w-full max-w-[280px] lg:max-w-[320px]"
+          >
+            <div className="relative p-2 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl skew-y-2 hover:skew-y-0 transition-transform duration-500 w-full aspect-[3/4]">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]">
+                {awardHeroImages.map((src, idx) => (
+                  <img 
+                    key={src}
+                    src={src} 
+                    alt={`Ajay Gopinath Award ${idx + 1}`} 
+                    className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
+                      idx === currentAwardIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="absolute -bottom-5 -left-5 bg-secondary text-primary px-6 py-3 rounded-2xl shadow-xl font-bold border border-primary/20 flex items-center gap-2 transform -skew-y-2 z-10 whitespace-nowrap">
+                🏆 <span className="text-sm">Award-Winning Farmer</span>
+              </div>
+            </div>
+            
+            <img 
+              src={logoImage} 
+              alt="Grow Greens Logo" 
+              className="mt-10 w-48 opacity-95 drop-shadow-lg"
+            />
           </motion.div>
         </div>
       </section>
@@ -184,6 +231,31 @@ export default function Home() {
           <BookOpen className="w-12 h-12 text-primary mx-auto mb-4" />
           <h3 className="text-3xl font-bold mb-2">50+</h3>
           <p className="text-muted-foreground">Workshops Conducted</p>
+        </div>
+      </Section>
+
+      {/* Awards Section */}
+      <Section className="py-12 md:py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl mb-4">Awards & Recognition</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Our commitment to quality and sustainable farming has been recognized through various prestigious awards.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
+            <img src="/images/Pics/award.jpg" alt="Award 1" className="w-full h-full object-cover aspect-video" />
+          </motion.div>
+          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
+            <img src="/images/Pics/award-2.jpg" alt="Award 2" className="w-full h-full object-cover aspect-video" />
+          </motion.div>
+          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
+            <img src="/images/Pics/awards-3.jpg" alt="Award 3" className="w-full h-full object-cover aspect-video" />
+          </motion.div>
+          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
+            <img src="/images/Pics/awards-4.jpg" alt="Award 4" className="w-full h-full object-cover aspect-video" />
+          </motion.div>
         </div>
       </Section>
 

@@ -51,11 +51,16 @@ export default function Training() {
                 ))}
               </ul>
               <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 mb-6">
-                <p className="text-sm font-semibold text-primary">
+                <p className="text-sm font-semibold text-primary mb-3">
                   Includes small farm model starting with trays and seeds.
                 </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <img src="/images/Pics/home-installation-1.jpg" alt="Home Installation 1" className="rounded-lg object-cover aspect-square" />
+                  <img src="/images/Pics/home-installation-2.jpg" alt="Home Installation 2" className="rounded-lg object-cover aspect-square" />
+                  <img src="/images/Pics/home-installation-3.jpg" alt="Home Installation 3" className="rounded-lg object-cover aspect-square" />
+                  <img src="/images/Pics/home-installation-4.jpg" alt="Home Installation 4" className="rounded-lg object-cover aspect-square" />
+                </div>
               </div>
-              <div className="text-3xl font-bold text-primary mb-2">₹12,000</div>
               <Link href="/contact?type=training">
                 <Button className="w-full mt-4">Enquire Now</Button>
               </Link>

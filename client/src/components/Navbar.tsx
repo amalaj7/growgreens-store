@@ -78,14 +78,6 @@ export function Navbar() {
               </span>
             </Link>
           ))}
-          <Link href="/contact" className="cursor-pointer">
-            <Button
-              variant={isSolid ? "default" : "secondary"}
-              className="rounded-full px-6 font-semibold"
-            >
-              Get in Touch
-            </Button>
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -119,9 +111,6 @@ export function Navbar() {
                   </span>
                 </Link>
               ))}
-              <Link href="/contact" className="cursor-pointer">
-                <Button className="w-full rounded-xl">Get in Touch</Button>
-              </Link>
             </div>
           </motion.div>
         )}

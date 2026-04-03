@@ -65,7 +65,6 @@ const newsArticles = [
 const youtubeVideos = [
   { id: "Dzv4wJr36ao", url: "https://www.youtube.com/watch?v=Dzv4wJr36ao&t=1452s", type: "video" }, // Highlighted First Video
   { id: "lNZMqml-z7k", url: "https://www.youtube.com/watch?v=lNZMqml-z7k&t=194s", type: "video" },
-  { id: "YE4Tip0MOUg", url: "https://www.youtube.com/watch?v=YE4Tip0MOUg&t=2943s", type: "video" },
   { id: "YX9cTBm9ByM", url: "https://www.youtube.com/watch?v=YX9cTBm9ByM", type: "video" },
   { id: "8A1XSPJGzkQ", url: "https://www.youtube.com/watch?v=8A1XSPJGzkQ", type: "video" },
   { id: "nqmPoQd1624", url: "https://www.youtube.com/watch?v=nqmPoQd1624&t=598s", type: "video" },
@@ -111,7 +110,7 @@ export default function Featured() {
         <div className="flex flex-col items-center mb-12">
           <div className="flex items-center gap-3 mb-4">
             <Youtube className="w-10 h-10 text-red-600" />
-            <h2 className="text-4xl font-bold tracking-tight">Videos & Interviews</h2>
+            <h2 className="text-4xl font-bold tracking-tight">Media Presence</h2>
           </div>
           <p className="text-muted-foreground">Watch our journey, farming tips, and media coverage</p>
         </div>

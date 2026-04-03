@@ -67,6 +67,77 @@ export default function Products() {
           })}
         </div>
 
+        {/* Gallery Sections */}
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl mb-4 font-serif text-foreground">Explore Our Collections</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Get a closer look at what Grow Greens has to offer.</p>
+          </div>
+
+          {/* Microgreens & Millets Gallery */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <Leaf className="w-8 h-8 text-primary" /> Live Microgreens & Millets Varieties
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {Array.from({ length: 34 }).map((_, i) => (
+                <img key={`mg-${i}`} src={`/images/Pics/microgreens-varities%20(${i + 1}).jpg`} alt={`Live Microgreens ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+              ))}
+              <img src="/images/Pics/pearl-millet.jpg" alt="Pearl Millet" className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Edible Flowers Gallery */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <Flower2 className="w-8 h-8 text-primary" /> Edible Flowers
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-6xl mx-auto">
+              {Array.from({ length: 7 }).map((_, i) => (
+                <img key={`fl-${i}`} src={`/images/Pics/flowers%20(${i + 1}).jpg`} alt={`Edible Flower ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+              ))}
+            </div>
+          </div>
+
+          {/* Sprouts Gallery */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <Sprout className="w-8 h-8 text-primary" /> Fresh Sprouts
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+              {[1, 2, 4, 5, 6, 8, 9].map((num) => (
+                <img key={`sp-${num}`} src={`/images/Pics/sprouts%20(${num}).jpg`} alt={`Sprouts ${num}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+              ))}
+            </div>
+          </div>
+
+
+
+          {/* Seeds Gallery */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <PackageOpen className="w-8 h-8 text-primary" /> Premium Seeds
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+              {Array.from({ length: 11 }).map((_, i) => (
+                <img key={`se-${i}`} src={`/images/Pics/seeds%20(${i + 1}).jpg`} alt={`Seeds ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+              ))}
+            </div>
+          </div>
+
+          {/* Small Farm Model Gallery */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <Home className="w-8 h-8 text-primary" /> Small Farm Model (Home Installation)
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <img key={`hi-${i}`} src={`/images/Pics/home-installation-${i + 1}.jpg`} alt={`Home Installation ${i + 1}`} className="rounded-xl object-cover w-full aspect-[4/3] shadow-sm hover:scale-105 transition-transform" loading="lazy" />
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Contact CTA */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

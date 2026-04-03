@@ -2,7 +2,8 @@ import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { SEO } from "@/components/SEO";
 import heroImg from "/images/hero_microgreens.jpg";
-import founderImg from "/images/ajay-image.webp";
+import founderImg from "/images/training-image.webp";
+import logoImage from "@assets/logo.png";
 
 export default function Story() {
   return (
@@ -20,18 +21,23 @@ export default function Story() {
 
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div className="relative lg:sticky lg:top-24">
-            <div className="absolute -inset-4 bg-secondary/30 rounded-3xl transform -rotate-3 z-0" />
-            <img 
-              src={founderImg} 
-              alt="Ajay Gopinath Founder" 
-              className="relative z-10 rounded-2xl shadow-xl w-full"
-            />
+          <div className="relative lg:sticky lg:top-24 flex flex-col gap-8 max-w-xs mx-auto lg:mx-0">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-secondary/30 rounded-3xl transform -rotate-3 z-0" />
+              <img 
+                src={founderImg} 
+                alt="Ajay Gopinath Founder" 
+                className="relative z-10 rounded-2xl shadow-xl w-full"
+              />
+            </div>
+            <img src="/images/ajay-image.jpg" alt="Ajay Gopinath Storytelling 1" className="rounded-2xl shadow-xl w-full object-cover" />
+            <img src="/images/ajay-image-2.jpg" alt="Ajay Gopinath Storytelling 2" className="rounded-2xl shadow-xl w-full object-cover" />
           </div>
           
-          <div>
+          <div className="relative">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">The Founder</span>
             <h2 className="text-4xl mb-6 text-foreground">Meet Ajay Gopinath</h2>
+            <img src={logoImage} alt="Grow Greens Background" className="absolute top-0 right-0 opacity-10 w-48 pointer-events-none" />
             <div className="prose prose-lg text-muted-foreground">
               <p>
                 A single meal at a Bengaluru restaurant changed everything for Ajay Gopinath. Sitting across a beautifully plated dish garnished with vibrant microgreens, he found himself captivated — not just by how they looked, but by what they represented. These tiny greens, bursting with nutrients, opened a window into a world he had never imagined pursuing. That evening planted a seed that would eventually grow into Grow Greens.
@@ -44,10 +50,10 @@ export default function Story() {
               
               <h3 className="text-2xl font-semibold mt-8 mb-4 text-foreground">Growing a Brand from 80 Square Feet</h3>
               <p>
-                When Ajay felt ready, he turned a modest 80-square-foot room at home into Grow Greens' first commercial farm. With over 15 varieties on offer — from tender pea shoots and crisp radish greens to fragrant cilantro and hearty kale — he was soon producing around 5 kg of fresh microgreens every single day, all without a single drop of pesticide.
+                When Ajay felt ready, he turned a modest 80-square-foot room at home into Grow Greens' first commercial farm. With over 15 varieties on offer — from tender pea shoots and crisp radish greens to fragrant cilantro and hearty kale — he was soon producing around 5 kg of fresh microgreens every single day, all without a single drop of pesticide or fertilisers. We only use non-hybrid, non-treated, open pollinated (OP) seeds.
               </p>
               <p>
-                Word spread quickly. Consumers who discovered Grow Greens kept coming back, drawn in by consistent quality and genuine care behind every tray. The brand grew from a home setup to a recognized name across Kerala — and then beyond, with franchise outlets now operating in Chennai and Bengaluru. Today, monthly revenues range between ₹22 lakh and ₹73 lakh, a testament to what passion and persistence can build.
+                Word spread quickly. Consumers who discovered Grow Greens kept coming back, drawn in by consistent quality and genuine care behind every tray. The brand grew from a home setup to a recognized name across Kerala — and then beyond, operating across India with over 140+ franchise models. Today yearly turnover is over 60 lakhs, a testament to what passion and persistence can build.
               </p>
             </div>
           </div>
@@ -111,6 +117,8 @@ export default function Story() {
         </div>
       </Section>
 
+
+
       <Section bg="light">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl mb-12">Our Philosophy</h2>
@@ -118,12 +126,12 @@ export default function Story() {
             <div className="p-6">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-sm">🌱</div>
               <h3 className="text-xl font-bold mb-3 text-foreground">100% Organic</h3>
-              <p className="text-muted-foreground text-sm">Non-GMO seeds, no pesticides, just pure nature.</p>
+              <p className="text-muted-foreground text-sm">Non-GMO, non-hybrid, non-treated open pollinated (OP) seeds, no pesticides or fertilisers, just pure nature.</p>
             </div>
             <div className="p-6">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-sm">💧</div>
               <h3 className="text-xl font-bold mb-3 text-foreground">Soil-less</h3>
-              <p className="text-muted-foreground text-sm">Hydroponic techniques that save water and space.</p>
+              <p className="text-muted-foreground text-sm">Vertical Farming Method that saves water and space.</p>
             </div>
             <div className="p-6">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-sm">❤️</div>
@@ -131,6 +139,23 @@ export default function Story() {
               <p className="text-muted-foreground text-sm">Grown with care and attention to every tray.</p>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Awards Section */}
+      <Section className="py-12 md:py-20 bg-white border-t border-border/50">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl mb-4 font-serif text-foreground">Awards & Recognition</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Our commitment to quality and sustainable farming has been recognized through various prestigious awards.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <img src="/images/Pics/award.jpg" alt="Award 1" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
+          <img src="/images/Pics/award-2.jpg" alt="Award 2" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
+          <img src="/images/Pics/awards-3.jpg" alt="Award 3" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
+          <img src="/images/Pics/awards-4.jpg" alt="Award 4" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
         </div>
       </Section>
     </div>

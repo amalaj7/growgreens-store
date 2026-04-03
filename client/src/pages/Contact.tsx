@@ -29,7 +29,8 @@ export default function Contact() {
       email: "",
       phone: "",
       message: "",
-      type: initialType
+      type: initialType,
+      state: ""
     }
   });
 
@@ -60,6 +61,7 @@ export default function Contact() {
       "general": "General Inquiry"
     };
     formData.append("entry.1135467792", typeMap[data.type] || "General Inquiry");
+    formData.append("entry.315415258", data.state || "");
     formData.append("entry.1018339571", data.message);
 
     try {
@@ -92,7 +94,7 @@ export default function Contact() {
     <div>
       <SEO 
         title="Contact Us" 
-        description="Get in touch with Grow Greens. Reach out for microgreens subscription, training workshops, and product inquiries in Kerala."
+        description="Get in touch with Grow Greens. Reach out for microgreens subscription, training workshops, and product inquiries."
         path="/contact"
       />
       <PageHeader 
@@ -191,9 +193,9 @@ export default function Contact() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone (Optional)</FormLabel>
+                        <FormLabel>Phone</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91..." className="rounded-lg h-12 text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} value={field.value || ''} />
+                          <Input placeholder="Phone Number" className="rounded-lg h-12 text-base border-primary/20 bg-white focus:border-primary/50 transition-colors shadow-sm" {...field} value={field.value || ''} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -216,8 +218,38 @@ export default function Contact() {
                         <SelectContent>
                           <SelectItem value="general">General Inquiry</SelectItem>
                           <SelectItem value="products">Our Products</SelectItem>
-                          <SelectItem value="subscription">Subscription (Kerala)</SelectItem>
+                          <SelectItem value="subscription">Subscription</SelectItem>
                           <SelectItem value="training">Training & Workshops</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="state"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>State</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="rounded-lg h-12 text-base border-primary/20 bg-white focus:ring-primary/50 transition-colors shadow-sm">
+                            <SelectValue placeholder="Select your state" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="max-h-[300px]">
+                          {[
+                            "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+                            "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+                            "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+                            "Meghalaya", "Mizoram", "Nagaland", "Odisha (formerly Orissa)", "Punjab",
+                            "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+                            "Uttar Pradesh", "Uttarakhand"
+                          ].map(state => (
+                            <SelectItem key={state} value={state}>{state}</SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                       <FormMessage />

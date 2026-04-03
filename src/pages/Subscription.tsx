@@ -20,7 +20,9 @@ const subscriptionFeatures = [
 
 const includedFeatures = [
   "One box feeds one person for a full week",
-  "11 varieties to choose from",
+  "11 microgreens varieties to choose from",
+  "Fresh produce available (pulp, sprouts, millets, exotic flowers & vegetables)",
+  "Fully customizable plan based on your needs",
   "Always fresh, never frozen",
   "Grown with care and expertise",
   "Convenient weekly schedule",
@@ -39,18 +41,18 @@ const whyChoose = [
   },
   { 
     icon: "🛡️", 
-    title: "No Pesticides, No Fertilizers", 
+    title: "No Pesticides, No Fertilisers", 
     desc: "Pure and safe microgreens for you and your family" 
   },
   { 
     icon: "🌾", 
     title: "Non-GMO Seeds", 
-    desc: "Open pollinated seeds ensuring natural growth and authentic flavors" 
+    desc: "Non-hybrid, non-treated, open pollinated (OP) seeds ensuring natural growth and authentic flavors" 
   },
   { 
     icon: "💰", 
-    title: "Low Rates", 
-    desc: "Premium quality at affordable prices - just ₹600/month" 
+    title: "Affordable Rates", 
+    desc: "Premium quality starting from ₹599/month" 
   },
   { 
     icon: "💧", 
@@ -129,9 +131,9 @@ const varieties = [
     image: "https://images.unsplash.com/photo-1599599810694-b5ac4dd479e0?w=400&h=300&fit=crop"
   },
   { 
-    name: "Radish Red", 
-    desc: "Bold color with spicy kick",
-    image: "https://images.unsplash.com/photo-1599599810694-b5ac4dd479e0?w=400&h=300&fit=crop"
+    name: "Millets", 
+    desc: "Wholesome, nutrient-dense ancient grains",
+    image: "/images/Pics/pearl-millet.jpg"
   },
   { 
     name: "Radish Pink", 
@@ -171,7 +173,7 @@ export default function Subscription() {
       {/* Subscription Model Section */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-4xl font-bold text-center mb-3">Simple Subscription Model</h2>
-        <p className="text-center text-gray-600 mb-12">Fresh microgreens delivered weekly at an affordable price</p>
+        <p className="text-center text-gray-600 mb-12">Fresh microgreens & fresh produce delivered weekly at an affordable price</p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Monthly Plan Card */}
@@ -179,7 +181,7 @@ export default function Subscription() {
             <div className="mb-6">
               <h3 className="text-3xl font-bold mb-2">Monthly Plan</h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-green-600 text-4xl font-bold">₹600</span>
+                <span className="text-green-600 text-4xl font-bold">From ₹599</span>
                 <span className="text-gray-600">per month</span>
               </div>
             </div>
