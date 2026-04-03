@@ -151,7 +151,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-20 text-white flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+        <div className="container mx-auto px-4 relative z-20 text-white flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20 lg:pr-20 xl:pr-40">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
