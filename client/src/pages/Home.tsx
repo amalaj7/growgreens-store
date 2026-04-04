@@ -18,7 +18,15 @@ const harvestImages = [
 const awardHeroImages = [
   "/images/Pics/award.jpg",
   "/images/Pics/award-2.jpg",
-  "/images/Pics/awards-3.jpg"
+  "/images/Pics/awards-3.jpg",
+  "/images/Pics/awards-4.jpg",
+  "/images/Pics/awards (1).jpg",
+  "/images/Pics/awards (2).jpg",
+  "/images/Pics/awards (3).jpg",
+  "/images/Pics/awards (4).jpg",
+  "/images/Pics/awards (5).jpg",
+  "/images/Pics/awards (6).jpg",
+  "/images/Pics/awards (7).jpg"
 ];
 
 export default function Home() {
@@ -219,23 +227,23 @@ export default function Home() {
       <Section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-border/50 hover:shadow-xl transition-all">
           <Sprout className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h3 className="text-3xl font-bold mb-2">15+</h3>
+          <h3 className="text-3xl font-bold mb-2">35+</h3>
           <p className="text-muted-foreground">Varieties of Greens</p>
         </div>
         <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-border/50 hover:shadow-xl transition-all">
           <ShoppingBag className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h3 className="text-3xl font-bold mb-2">1000+</h3>
+          <h3 className="text-3xl font-bold mb-2">2000+</h3>
           <p className="text-muted-foreground">Happy Customers</p>
         </div>
         <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-border/50 hover:shadow-xl transition-all">
           <BookOpen className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h3 className="text-3xl font-bold mb-2">50+</h3>
+          <h3 className="text-3xl font-bold mb-2">100+</h3>
           <p className="text-muted-foreground">Workshops Conducted</p>
         </div>
       </Section>
 
       {/* Awards Section */}
-      <Section className="py-12 md:py-20">
+      <Section>
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4">Awards & Recognition</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -243,19 +251,15 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
-            <img src="/images/Pics/award.jpg" alt="Award 1" className="w-full h-full object-cover aspect-video" />
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white mb-8">
+            <img src="/images/Pics/award.jpg" alt="Grow Greens Award" className="w-full h-auto object-cover" />
           </motion.div>
-          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
-            <img src="/images/Pics/award-2.jpg" alt="Award 2" className="w-full h-full object-cover aspect-video" />
-          </motion.div>
-          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
-            <img src="/images/Pics/awards-3.jpg" alt="Award 3" className="w-full h-full object-cover aspect-video" />
-          </motion.div>
-          <motion.div whileHover={{ y: -5 }} className="rounded-2xl overflow-hidden shadow-lg border border-border/50 bg-white">
-            <img src="/images/Pics/awards-4.jpg" alt="Award 4" className="w-full h-full object-cover aspect-video" />
-          </motion.div>
+          <Link href="/story#awards">
+            <Button variant="outline" className="text-lg px-8 py-6 rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+              View All Awards <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </Section>
 
@@ -398,7 +402,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact">
             <Button size="lg" className="bg-secondary text-primary hover:bg-white text-lg px-8 py-6 rounded-full font-bold">
-              Contact Us
+              Get in Touch
             </Button>
           </Link>
         </div>

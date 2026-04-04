@@ -13,7 +13,7 @@ const links = [
   { href: "/subscription", label: "Subscription" },
   { href: "/gallery", label: "Gallery" },
   { href: "/featured", label: "Featured" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Get in Touch" },
 ];
 
 export function Navbar() {
@@ -62,20 +62,26 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="cursor-pointer">
-              <span
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href
-                    ? "text-primary font-bold"
-                    : isSolid
-                    ? "text-muted-foreground"
-                    : "text-white/90 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </span>
+              {link.label === "Get in Touch" ? (
+                <span className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all hover:scale-105 shadow-md ${!isSolid ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:shadow-lg"}`}>
+                  {link.label}
+                </span>
+              ) : (
+                <span
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    location === link.href
+                      ? "text-primary font-bold"
+                      : isSolid
+                      ? "text-muted-foreground"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </span>
+              )}
             </Link>
           ))}
         </div>
@@ -102,13 +108,19 @@ export function Navbar() {
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {links.map((link) => (
                 <Link key={link.href} href={link.href} className="cursor-pointer">
-                  <span
-                    className={`block py-2 text-lg font-medium ${
-                      location === link.href ? "text-primary" : "text-muted-foreground"
-                    }`}
-                  >
-                    {link.label}
-                  </span>
+                  {link.label === "Get in Touch" ? (
+                    <span className="block w-full text-center py-3 bg-primary text-white font-bold rounded-lg shadow-md mt-2">
+                      {link.label}
+                    </span>
+                  ) : (
+                    <span
+                      className={`block py-2 text-lg font-medium ${
+                        location === link.href ? "text-primary font-bold" : "text-muted-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  )}
                 </Link>
               ))}
             </div>

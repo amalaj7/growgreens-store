@@ -50,7 +50,7 @@ export default function Story() {
               
               <h3 className="text-2xl font-semibold mt-8 mb-4 text-foreground">Growing a Brand from 80 Square Feet</h3>
               <p>
-                When Ajay felt ready, he turned a modest 80-square-foot room at home into Grow Greens' first commercial farm. With over 15 varieties on offer — from tender pea shoots and crisp radish greens to fragrant cilantro and hearty kale — he was soon producing around 5 kg of fresh microgreens every single day, all without a single drop of pesticide or fertilisers. We only use non-hybrid, non-treated, open pollinated (OP) seeds.
+                When Ajay felt ready, he turned a modest 80-square-foot room at home into Grow Greens' first commercial farm. With over 35 varieties on offer — from tender pea shoots and crisp radish greens to fragrant cilantro and hearty kale — he was soon producing around 5 kg of fresh microgreens every single day, all without a single drop of pesticide or fertilisers. We only use non-hybrid, non-treated, open pollinated (OP) seeds.
               </p>
               <p>
                 Word spread quickly. Consumers who discovered Grow Greens kept coming back, drawn in by consistent quality and genuine care behind every tray. The brand grew from a home setup to a recognized name across Kerala — and then beyond, operating across India with over 140+ franchise models. Today yearly turnover is over 60 lakhs, a testament to what passion and persistence can build.
@@ -143,7 +143,7 @@ export default function Story() {
       </Section>
 
       {/* Awards Section */}
-      <Section className="py-12 md:py-20 bg-white border-t border-border/50">
+      <Section id="awards" className="py-12 md:py-20 bg-white border-t border-border/50">
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4 font-serif text-foreground">Awards & Recognition</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -152,10 +152,21 @@ export default function Story() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <img src="/images/Pics/award.jpg" alt="Award 1" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
-          <img src="/images/Pics/award-2.jpg" alt="Award 2" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
-          <img src="/images/Pics/awards-3.jpg" alt="Award 3" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
-          <img src="/images/Pics/awards-4.jpg" alt="Award 4" className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
+          {[
+            "/images/Pics/award.jpg",
+            "/images/Pics/award-2.jpg",
+            "/images/Pics/awards-3.jpg",
+            "/images/Pics/awards-4.jpg",
+            "/images/Pics/awards (1).jpg",
+            "/images/Pics/awards (2).jpg",
+            "/images/Pics/awards (3).jpg",
+            "/images/Pics/awards (4).jpg",
+            "/images/Pics/awards (5).jpg",
+            "/images/Pics/awards (6).jpg",
+            "/images/Pics/awards (7).jpg"
+          ].map((src, idx) => (
+            <img key={src} src={src} alt={`Award ${idx + 1}`} className="rounded-2xl shadow-lg border border-border/50 w-full aspect-square object-cover hover:-translate-y-1 transition-transform" />
+          ))}
         </div>
       </Section>
     </div>

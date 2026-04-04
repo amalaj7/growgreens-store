@@ -17,7 +17,7 @@ export function Section({ children, className = "", id, delay = 0, bg = "white" 
   };
 
   return (
-    <section id={id} className={`py-20 md:py-32 ${bgStyles[bg]} overflow-hidden`}>
+    <section id={id} className={`py-12 md:py-20 ${bgStyles[bg]} overflow-hidden`}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

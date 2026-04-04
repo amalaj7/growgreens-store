@@ -93,7 +93,7 @@ export default function Contact() {
   return (
     <div>
       <SEO 
-        title="Contact Us" 
+        title="Get in Touch" 
         description="Get in touch with Grow Greens. Reach out for microgreens subscription, training workshops, and product inquiries."
         path="/contact"
       />
