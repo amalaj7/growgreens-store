@@ -192,6 +192,22 @@ export default function Subscription() {
         title="Microgreens Subscription" 
         description="Get fresh, nutrient-rich microgreens delivered to your doorstep weekly. Choose from 11 organic varieties."
         path="/subscription"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Microgreens Weekly Subscription",
+          "provider": {
+            "@type": "Organization",
+            "name": "Grow Greens"
+          },
+          "description": "Weekly delivery of fresh, organic microgreens directly from the farm to your home.",
+          "offers": {
+            "@type": "Offer",
+            "price": "599",
+            "priceCurrency": "INR",
+            "description": "Monthly plan starting from ₹599/month"
+          }
+        }}
       />
       {/* Subscription Model Section */}
       <div className="max-w-6xl mx-auto px-4 py-16">

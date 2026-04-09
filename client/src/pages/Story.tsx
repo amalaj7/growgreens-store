@@ -12,6 +12,17 @@ export default function Story() {
         title="Our Story" 
         description="From corporate banking to urban farming. Learn about Ajay Gopinath's journey and the philosophy behind Grow Greens."
         path="/story"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Ajay Gopinath",
+            "description": "Founder of Grow Greens, an urban farmer transitioned from corporate banking.",
+            "jobTitle": "Founder",
+            "knowsAbout": ["Microgreens", "Urban Farming", "Organic Agriculture"]
+          }
+        }}
       />
       <PageHeader 
         title="Our Story" 

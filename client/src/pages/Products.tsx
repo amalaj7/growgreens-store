@@ -32,6 +32,21 @@ export default function Products() {
         title="Our Products" 
         description="Fresh live microgreens, sprouts, small farm models, and accessories to grow your own superfoods."
         path="/products"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Grow Greens Product Collection",
+          "description": "A wide range of organic microgreens, sprouts, and urban farming equipment.",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": products.map((p, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "name": p.name,
+              "description": p.desc
+            }))
+          }
+        }}
       />
       <PageHeader 
         title="Our Products" 

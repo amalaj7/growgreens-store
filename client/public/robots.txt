@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block non-existent language paths that cause Soft 404
+Disallow: /de/
+Disallow: /en/
+Disallow: /lander
+Disallow: /lander/
+
+# Block auth/login service pages
+Disallow: /services/
+
 Sitemap: https://growgreensstore.com/sitemap.xml

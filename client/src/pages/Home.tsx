@@ -147,6 +147,23 @@ export default function Home() {
         title="India's Leading Microgreens Farm" 
         description="Join the green revolution with Premium Organic Microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath. Farm fresh to your doorstep."
         path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Grow Greens",
+          "url": "https://growgreensstore.com",
+          "logo": "https://growgreensstore.com/favicon.png",
+          "sameAs": [
+            "https://www.instagram.com/growgreensstore/?hl=en"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-73062-99044",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": "English"
+          }
+        }}
       />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">

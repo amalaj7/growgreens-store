@@ -12,6 +12,38 @@ export default function Training() {
         title="Training & Workshops" 
         description="Learn the art of microgreens farming with our comprehensive workshops. We empower new farmers to grow healthy superfoods."
         path="/training"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Microgreens Farming Training & Workshops",
+          "provider": {
+            "@type": "Organization",
+            "name": "Grow Greens"
+          },
+          "description": "Comprehensive workshops on home growing and commercial microgreens farming.",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Training Programs",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Course",
+                  "name": "Home Growing Workshop",
+                  "description": "Perfect for hobbyists who want to grow healthy greens for their family."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Course",
+                  "name": "Commercial Farming Masterclass",
+                  "description": "For those looking to start a microgreens business."
+                }
+              }
+            ]
+          }
+        }}
       />
       <PageHeader 
         title="Training & Workshops" 
