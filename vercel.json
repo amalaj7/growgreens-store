@@ -3,6 +3,11 @@
   "outputDirectory": "dist/public",
   "redirects": [
     {
+      "source": "https://www.growgreensstore.com/:path*",
+      "destination": "https://growgreensstore.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/lander",
       "destination": "/",
       "permanent": true
@@ -40,6 +45,15 @@
     }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [

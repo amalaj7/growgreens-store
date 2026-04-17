@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-
-# Block auth/login service pages
-Disallow: /services/
-
 Sitemap: https://growgreensstore.com/sitemap.xml
