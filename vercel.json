@@ -8,22 +8,17 @@
       "permanent": true
     },
     {
-      "source": "/lander",
-      "destination": "/",
+      "source": "http://www.growgreensstore.com/:path*",
+      "destination": "https://growgreensstore.com/:path*",
       "permanent": true
     },
     {
-      "source": "/lander/(.*)",
-      "destination": "/",
+      "source": "http://growgreensstore.com/:path*",
+      "destination": "https://growgreensstore.com/:path*",
       "permanent": true
     },
     {
-      "source": "/de/(.*)",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/(.*)",
+      "source": "/de",
       "destination": "/",
       "permanent": true
     },
@@ -33,7 +28,32 @@
       "permanent": true
     },
     {
+      "source": "/de/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lander",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lander/:path*",
       "destination": "/",
       "permanent": true
     }
