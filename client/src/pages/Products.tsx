@@ -29,8 +29,9 @@ export default function Products() {
   return (
     <div>
       <SEO 
-        title="Our Products" 
-        description="Fresh live microgreens, sprouts, small farm models, and accessories to grow your own superfoods."
+        title="Buy Microgreens, Sprouts, Pulps & Small Farm Kits | Kochi, India" 
+        description="Shop fresh live microgreens, sprouts, pulps, and edible flowers near me. Buy a small farm kit to grow microgreens. Top organic supplier in Kochi, Kerala, India."
+        keywords="buy microgreens online india, microgreens kochi, microgreens near me, fresh sprouts kerala, pulps, small farm, radish microgreens, broccoli microgreens, wholesale microgreens export"
         path="/products"
         jsonLd={{
           "@context": "https://schema.org",

@@ -9,8 +9,9 @@ export default function Story() {
   return (
     <div>
       <SEO 
-        title="Our Story" 
-        description="From corporate banking to urban farming. Learn about Ajay Gopinath's journey and the philosophy behind Grow Greens."
+        title="Our Story | Organic Microgreens Farm in Kochi, Kerala & India" 
+        description="Learn about Ajay Gopinath's journey from banking to urban farming. We are a trusted organic microgreens supplier in Kochi, Kerala, India, and global exporter."
+        keywords="microgreens farm kochi, organic microgreens farm kerala, microgreens farm india, ajay gopinath microgreens, urban farming india, pesticide-free microgreens near me, global microgreens exporter"
         path="/story"
         jsonLd={{
           "@context": "https://schema.org",

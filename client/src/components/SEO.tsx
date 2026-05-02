@@ -9,6 +9,8 @@ interface SEOProps {
   path: string;
   /** Optional JSON-LD structured data to inject. Falls back to standard WebPage schema. */
   jsonLd?: Record<string, unknown>;
+  /** Optional meta keywords. Note: While Google ignores this, it can be useful for other search engines and internal search. */
+  keywords?: string;
 }
 
 export function SEO({ 
@@ -19,6 +21,7 @@ export function SEO({
   image = '/images/hero_microgreens.jpg', 
   path,
   jsonLd,
+  keywords,
 }: SEOProps) {
   const DOMAIN = "https://growgreensstore.com"; 
   const canonicalUrl = `${DOMAIN}${path}`;
@@ -52,6 +55,7 @@ export function SEO({
       {/* Basic metadata */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       
       {/* Canonical tag to prevent duplicate content (e.g. Vercel vs custom domain) */}
       <link rel="canonical" href={canonicalUrl} />

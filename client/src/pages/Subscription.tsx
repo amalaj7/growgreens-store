@@ -189,8 +189,9 @@ export default function Subscription() {
   return (
     <div className="w-full bg-gray-50 pt-24">
       <SEO 
-        title="Microgreens Subscription" 
-        description="Get fresh, nutrient-rich microgreens delivered to your doorstep weekly. Choose from 11 organic varieties."
+        title="Microgreens Subscription | Fresh Greens Delivery in Kochi, India" 
+        description="Subscribe for fresh, organic microgreens delivery near me in Kochi, Kerala, India. Weekly delivery of 11 nutrient-rich varieties for your health."
+        keywords="microgreens subscription india, microgreens delivery kochi, fresh greens delivery kerala, microgreens home delivery near me, buy organic microgreens weekly"
         path="/subscription"
         jsonLd={{
           "@context": "https://schema.org",

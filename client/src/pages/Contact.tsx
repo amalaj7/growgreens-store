@@ -93,8 +93,9 @@ export default function Contact() {
   return (
     <div>
       <SEO 
-        title="Get in Touch" 
-        description="Get in touch with Grow Greens. Reach out for microgreens subscription, training workshops, and product inquiries."
+        title="Contact Us | Commercial Microgreens Supplier & Business Opportunities" 
+        description="Contact Grow Greens for fresh microgreens near me in Kochi, Kerala. We handle retail subscriptions, commercial supply, microgreens trainings, and global export."
+        keywords="commercial microgreens supplier, microgreens business opportunity kochi, wholesale microgreens india, microgreens global export, microgreens contact kerala, buy microgreens in bulk india"
         path="/contact"
       />
       <PageHeader 

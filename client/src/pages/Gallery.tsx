@@ -38,8 +38,9 @@ export default function Gallery() {
   return (
     <div>
       <SEO 
-        title="Green Gallery" 
-        description="A glimpse into our urban microgreens farm. Fresh daily harvests, growing trays, and packed greens ready for delivery."
+        title="Green Gallery | Urban Microgreens Farm in Kochi, India" 
+        description="View our lush microgreens farm in Kochi, Kerala, India. See our fresh daily harvest, growing trays, and premium export-ready organic microgreens."
+        keywords="microgreens farm images, organic microgreens kochi kerala, microgreens farm india, fresh microgreens gallery, hydroponic farming india"
         path="/gallery"
       />
       <PageHeader 

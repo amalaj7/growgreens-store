@@ -84,8 +84,9 @@ export default function Featured() {
   return (
     <div className="pt-24 min-h-screen">
       <SEO 
-        title="Media & Features" 
-        description="Read about Grow Greens in various top publications and watch our latest YouTube interviews."
+        title="Media & Features | India's Top Microgreens Farm in Kochi" 
+        description="Read about Grow Greens in the news. Discover how our organic microgreens farm in Kochi, Kerala, India gained national and global recognition."
+        keywords="microgreens india news, microgreens farm kochi featured, ajay gopinath microgreens, urban farming kerala, best microgreens farm india"
         path="/featured"
       />
 

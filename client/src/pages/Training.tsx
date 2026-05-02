@@ -9,8 +9,9 @@ export default function Training() {
   return (
     <div>
       <SEO 
-        title="Training & Workshops" 
-        description="Learn the art of microgreens farming with our comprehensive workshops. We empower new farmers to grow healthy superfoods."
+        title="Microgreens Farming Training & Business Opportunities | Kochi, India" 
+        description="Learn how to grow microgreens commercially with our training in Kochi, Kerala, India. Start your small farm and explore lucrative business opportunities globally."
+        keywords="microgreens trainings, grow microgreens commercially, microgreens business opportunity, small farm setup, microgreens workshop kochi, learn microgreens farming kerala, commercial microgreens course india, urban farming workshop near me"
         path="/training"
         jsonLd={{
           "@context": "https://schema.org",

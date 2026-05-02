@@ -40,60 +40,60 @@ export default function Home() {
   }, []);
 
   const whyChoose = [
-    { 
-      icon: "🍃", 
-      title: "100% Natural", 
-      desc: "Grown naturally without any harmful chemicals or artificial additives" 
+    {
+      icon: "🍃",
+      title: "100% Natural",
+      desc: "Grown naturally without any harmful chemicals or artificial additives"
     },
-    { 
-      icon: "📅", 
-      title: "7 Years Experience", 
-      desc: "Trusted expertise in cultivating premium quality microgreens" 
+    {
+      icon: "📅",
+      title: "7 Years Experience",
+      desc: "Trusted expertise in cultivating premium quality microgreens"
     },
-    { 
-      icon: "🛡️", 
-      title: "No Pesticides, No Fertilisers", 
-      desc: "Pure and safe microgreens for you and your family" 
+    {
+      icon: "🛡️",
+      title: "No Pesticides, No Fertilisers",
+      desc: "Pure and safe microgreens for you and your family"
     },
-    { 
-      icon: "🌾", 
-      title: "Non-GMO Seeds", 
-      desc: "Non-hybrid, non-treated, open pollinated (OP) seeds ensuring natural growth and authentic flavors" 
+    {
+      icon: "🌾",
+      title: "Non-GMO Seeds",
+      desc: "Non-hybrid, non-treated, open pollinated (OP) seeds ensuring natural growth and authentic flavors"
     },
-    { 
-      icon: "💰", 
-      title: "Low Rates", 
-      desc: "Premium quality at affordable prices - just ₹600/month" 
+    {
+      icon: "💰",
+      title: "Low Rates",
+      desc: "Premium quality at affordable prices - just ₹600/month"
     },
-    { 
-      icon: "💧", 
-      title: "Filtered RO Water", 
-      desc: "Grown using purified water for maximum purity and safety" 
+    {
+      icon: "💧",
+      title: "Filtered RO Water",
+      desc: "Grown using purified water for maximum purity and safety"
     },
-    { 
-      icon: "🍱", 
-      title: "Food Grade Trays", 
-      desc: "Cultivated in safe, food-grade trays maintaining highest hygiene standards" 
+    {
+      icon: "🍱",
+      title: "Food Grade Trays",
+      desc: "Cultivated in safe, food-grade trays maintaining highest hygiene standards"
     },
-    { 
-      icon: "🚚", 
-      title: "Free Home Delivery", 
-      desc: "Farm to home - fresh delivery at no extra cost" 
+    {
+      icon: "🚚",
+      title: "Free Home Delivery",
+      desc: "Farm to home - fresh delivery at no extra cost"
     },
-    { 
-      icon: "♻️", 
-      title: "100% Decomposable Medium", 
-      desc: "Environmentally friendly growing medium that's fully biodegradable" 
+    {
+      icon: "♻️",
+      title: "100% Decomposable Medium",
+      desc: "Environmentally friendly growing medium that's fully biodegradable"
     },
-    { 
-      icon: "🪪", 
-      title: "FSSAI Certified", 
-      desc: "Certified by Food Safety and Standards Authority of India" 
+    {
+      icon: "🪪",
+      title: "FSSAI Certified",
+      desc: "Certified by Food Safety and Standards Authority of India"
     },
-    { 
-      icon: "📍", 
-      title: "Locally Grown", 
-      desc: "Supporting local agriculture while reducing carbon footprint" 
+    {
+      icon: "📍",
+      title: "Locally Grown",
+      desc: "Supporting local agriculture while reducing carbon footprint"
     },
   ];
 
@@ -143,9 +143,10 @@ export default function Home() {
 
   return (
     <div>
-      <SEO 
-        title="India's Leading Microgreens Farm" 
-        description="Join the green revolution with Premium Organic Microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath. Farm fresh to your doorstep."
+      <SEO
+        title="India's Leading Microgreens Farm | Fresh Greens in Kochi, Kerala & Global Export"
+        description="Buy fresh organic microgreens near me in Kochi, Kerala, India. We offer home delivery, commercial supply, small farm setups, sprouts, pulps, and microgreens trainings."
+        keywords="microgreens india, microgreens kochi, microgreens kerala, microgreens near me, buy microgreens online, fresh microgreens delivery, microgreens global export, microgreens trainings, business opportunity, small farm, sprouts, pulps, grow microgreens commercially, commercial microgreens"
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -169,9 +170,9 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 z-10" />
-          <img 
-            src={heroImg} 
-            alt="Fresh Lush Microgreens" 
+          <img
+            src={heroImg}
+            alt="Fresh Lush Microgreens"
             className="w-full h-full object-cover"
           />
         </div>
@@ -187,7 +188,7 @@ export default function Home() {
               India's Leading Microgreens Farm
             </span>
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight text-white">
-              Cultivating Health, <br/>
+              Cultivating Health, <br />
               <span className="text-secondary">One Tiny Leaf</span> at a Time.
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl font-light">
@@ -216,13 +217,12 @@ export default function Home() {
             <div className="relative p-2 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl skew-y-2 hover:skew-y-0 transition-transform duration-500 w-full aspect-[3/4]">
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]">
                 {awardHeroImages.map((src, idx) => (
-                  <img 
+                  <img
                     key={src}
-                    src={src} 
-                    alt={`Ajay Gopinath Award ${idx + 1}`} 
-                    className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
-                      idx === currentAwardIndex ? "opacity-100" : "opacity-0"
-                    }`}
+                    src={src}
+                    alt={`Ajay Gopinath Award ${idx + 1}`}
+                    className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${idx === currentAwardIndex ? "opacity-100" : "opacity-0"
+                      }`}
                   />
                 ))}
               </div>
@@ -230,10 +230,10 @@ export default function Home() {
                 🏆 <span className="text-sm">Award-Winning Farmer</span>
               </div>
             </div>
-            
-            <img 
-              src={logoImage} 
-              alt="Grow Greens Logo" 
+
+            <img
+              src={logoImage}
+              alt="Grow Greens Logo"
               className="mt-10 w-48 opacity-95 drop-shadow-lg"
             />
           </motion.div>
@@ -370,11 +370,11 @@ export default function Home() {
           <h2 className="text-4xl mb-4">Why Choose Grow Greens?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">Quality, safety, and sustainability in every box</p>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {whyChoose.map((item) => (
-            <motion.div 
-              key={item.title} 
+            <motion.div
+              key={item.title}
               whileHover={{ y: -5 }}
               className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
             >
@@ -392,11 +392,11 @@ export default function Home() {
           <h2 className="text-4xl mb-4">Importance of Microgreens in Our Daily Life</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">Discover why microgreens are essential for modern nutrition and wellness</p>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {importance.map((item) => (
-            <motion.div 
-              key={item.title} 
+            <motion.div
+              key={item.title}
               whileHover={{ x: 5 }}
               className="bg-white rounded-xl shadow-md p-6 flex items-start gap-4 hover:shadow-lg transition"
             >
