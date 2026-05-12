@@ -3,57 +3,12 @@
   "outputDirectory": "dist/public",
   "redirects": [
     {
-      "source": "https://www.growgreensstore.com/:path*",
-      "destination": "https://growgreensstore.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://www.growgreensstore.com/:path*",
-      "destination": "https://growgreensstore.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://growgreensstore.com/:path*",
-      "destination": "https://growgreensstore.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/de",
+      "source": "/(en|de|lander)/:path*",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/de/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/de/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/lander",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/lander/:path*",
+      "source": "/(en|de|lander)",
       "destination": "/",
       "permanent": true
     }
@@ -71,24 +26,6 @@
         {
           "key": "X-Robots-Tag",
           "value": "index, follow"
-        }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
         }
       ]
     }
