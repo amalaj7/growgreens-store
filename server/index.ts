@@ -60,6 +60,16 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Redirect legacy localized routes to home page (301)
+  app.use((req, res, next) => {
+    const path = req.path;
+    const match = path.match(/^\/(en|de|lander)(\/.*)?$/i);
+    if (match) {
+      return res.redirect(301, "/");
+    }
+    next();
+  });
+
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {

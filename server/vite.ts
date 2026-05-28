@@ -8,6 +8,17 @@ import { nanoid } from "nanoid";
 
 const viteLogger = createLogger();
 
+const VALID_CLIENT_ROUTES = new Set([
+  "/",
+  "/story",
+  "/products",
+  "/training",
+  "/subscription",
+  "/gallery",
+  "/featured",
+  "/contact"
+]);
+
 export async function setupVite(server: Server, app: Express) {
   const serverOptions = {
     middlewareMode: true,
@@ -49,7 +60,12 @@ export async function setupVite(server: Server, app: Express) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      let pathName = req.originalUrl.split('?')[0];
+      if (pathName.length > 1 && pathName.endsWith("/")) {
+        pathName = pathName.slice(0, -1);
+      }
+      const isErrorPage = !VALID_CLIENT_ROUTES.has(pathName);
+      res.status(isErrorPage ? 404 : 200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
