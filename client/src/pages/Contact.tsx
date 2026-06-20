@@ -276,11 +276,8 @@ export default function Contact() {
     };
     formData.append("entry.1135467792", typeMap[data.type] || "General Inquiry");
     
-    // Format State/Country for Google Form state entry
-    const locationString = data.state 
-      ? `${data.state}, ${data.country}`
-      : data.country;
-    formData.append("entry.315415258", locationString);
+    formData.append("entry.1898327496", data.country);
+    formData.append("entry.315415258", data.state || "");
     formData.append("entry.1018339571", data.message);
 
     try {
