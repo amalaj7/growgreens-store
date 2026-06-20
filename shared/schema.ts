@@ -16,6 +16,7 @@ export interface ContactRequest {
   phone: string;
   message: string;
   type: string;
+  country: string;
   state?: string;
 }
 
@@ -33,6 +34,7 @@ export const insertContactRequestSchema = z.object({
   phone: z.string().min(1, "Phone number is required"),
   message: z.string().min(1, "Message is required"),
   type: z.string(),
+  country: z.string().min(1, "Country is required"),
   state: z.string().optional(),
 });
 
