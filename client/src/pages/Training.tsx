@@ -48,7 +48,7 @@ export default function Training() {
       />
       <PageHeader 
         title="Training & Workshops" 
-        subtitle="Learn the Art of Microgreens Farming"
+        subtitle="In-Person Kochi Workshops & Live Online Global Masterclasses"
         image="/images/training_workshop.jpg"
       />
 
@@ -57,18 +57,19 @@ export default function Training() {
           <div className="text-center mb-16">
             <h2 className="text-4xl mb-6">Empowering New Farmers</h2>
             <p className="text-xl text-muted-foreground">
-              We don't just grow greens; we grow farmers. Join our comprehensive workshops to learn how to cultivate your own superfoods at home or for business.
+              We don't just grow greens; we grow farmers. Join our comprehensive workshops to learn how to cultivate your own superfoods at home or for business — available locally in Kochi and live online worldwide.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
-              <div className="mb-6">
+              <div className="mb-6 flex flex-wrap gap-2">
                 <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Beginner Friendly</span>
+                <span className="bg-white text-muted-foreground border border-border font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
               </div>
               <h3 className="text-2xl font-bold mb-4">Home Growing Workshop</h3>
               <p className="text-muted-foreground mb-6">
-                Perfect for hobbyists who want to grow healthy greens for their family. Learn the basics of seeds, medium, and care.
+                Perfect for hobbyists who want to grow healthy greens for their family. Learn the basics of seeds, medium, and care — available as in-person sessions in Kochi or live online globally.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -101,8 +102,9 @@ export default function Training() {
 
             <div className="bg-primary text-primary-foreground p-8 rounded-2xl shadow-lg relative overflow-hidden">
               <div className="absolute top-0 right-0 p-32 bg-secondary/10 rounded-full blur-3xl transform translate-x-10 -translate-y-10"></div>
-              <div className="mb-6 relative z-10">
+              <div className="mb-6 relative z-10 flex flex-wrap gap-2">
                 <span className="bg-white text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Professional</span>
+                <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 relative z-10 text-white">Commercial Farming Masterclass</h3>
               <p className="text-primary-foreground/80 mb-6 relative z-10">

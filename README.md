@@ -64,17 +64,21 @@ The project follows a monorepo-like layout containing client, server, and shared
 
 ## ✨ Key Platform Features
 
-### 1. Multi-Channel Contact & Lead Intake
+### 1. Global & Local Availability Mapping
+- **Local vs. Worldwide Distinctions**: The website clearly demarcates which items are delivered locally in Kochi, India vs. those exported globally (e.g., seeds, trays, growing mediums, small farm kits, and training).
+- **Product & Training Badging**: Integrates descriptive visual badges (`🌍 Global` and `📍 Local`) across products and training workshop cards, allowing international and local customers to easily identify appropriate options.
+
+### 2. Multi-Channel Contact & Lead Intake
 The Contact page [Contact.tsx](file:///z:/Personal/GITHUB/growgreens-store/client/src/pages/Contact.tsx) provides a dual approach for handling customer inquiries:
 - **Google Forms Integration**: Submits user inputs directly to a central Google Forms sheet for automated lead management without CORS issues using `fetch` with `no-cors` mode.
 - **Backend API Integration**: Backend endpoint compatibility is built-in using the `useContactSubmit` hook ([use-contact.ts](file:///z:/Personal/GITHUB/growgreens-store/client/src/hooks/use-contact.ts)), validating fields against the universal Zod schema [schema.ts](file:///z:/Personal/GITHUB/growgreens-store/shared/schema.ts).
 
-### 2. SEO Optimization & Schema Markup
+### 3. SEO Optimization & Schema Markup
 Every view integrates the [SEO.tsx](file:///z:/Personal/GITHUB/growgreens-store/client/src/components/SEO.tsx) component.
 - **Dynamic Headers**: Optimizes tags like `<title>`, `<meta name="description">`, and keywords for search crawlers.
 - **JSON-LD Schema Markup**: Injects structured organization and course schemas to ensure Rich Snippet representations on search engine results pages.
 
-### 3. Bundled Production Compilations
+### 4. Bundled Production Compilations
 To optimize cold start times and decrease syscall count during deployment, the project uses [build.ts](file:///z:/Personal/GITHUB/growgreens-store/script/build.ts):
 - Compiles the React client using **Vite** and writes static assets to `dist/public`.
 - Bundles the Express server files using **Esbuild** into a single compressed CommonJS file at `dist/index.cjs`.

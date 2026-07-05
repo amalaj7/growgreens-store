@@ -191,8 +191,8 @@ export default function Home() {
               Cultivating Health, <br />
               <span className="text-secondary">One Tiny Leaf</span> at a Time.
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl font-light">
-              Join the green revolution with Premium Organic Microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath.
+            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl font-light leading-relaxed">
+              Join the green revolution with premium organic microgreens grown with passion and precision by Microgreen Expert Ajay Gopinath. We deliver farm-fresh harvest across Kerala and Bengaluru, while exporting high-quality seeds, growing kits, and commercial farming workshops to growers worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/subscription">
