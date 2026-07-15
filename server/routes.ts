@@ -42,21 +42,21 @@ export async function registerRoutes(
       };
       formData.append("entry.1135467792", typeMap[input.type] || "General Inquiry");
       formData.append("entry.1898327496", input.country);
-      formData.append("entry.315415258", input.state || "");
+      formData.append("entry.315415258", input.state || "N/A");
       formData.append("entry.1018339571", input.message);
 
-      // Perform server-side POST request to Google Forms.
-      // We run this asynchronously and log any errors, but we don't block the response
-      // or crash if the external request fails.
       fetch(GOOGLE_FORM_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          "Content-Type": "application/x-www-form-urlencoded",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         },
         body: formData.toString()
-      }).then((response) => {
+      }).then(async (response) => {
         if (!response.ok) {
+          const bodyText = await response.text();
           console.error(`Google Form submission failed with status: ${response.status}`);
+          console.error(`Google Form response body snippet: ${bodyText.substring(0, 1000)}`);
         } else {
           console.log(`Google Form submission successful for: ${input.email}`);
         }
