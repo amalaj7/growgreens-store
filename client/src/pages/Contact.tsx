@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactRequestSchema, type InsertContactRequest } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
+import { useContactSubmit } from "@/hooks/use-contact";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
@@ -223,6 +224,7 @@ const INDIAN_STATES = [
 
 export default function Contact() {
   const { toast } = useToast();
+  const contactSubmit = useContactSubmit();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [location] = useLocation();
   const searchParams = new URLSearchParams(window.location.search);
@@ -259,48 +261,11 @@ export default function Contact() {
 
   const onSubmit = async (data: InsertContactRequest) => {
     setIsSubmitting(true);
-    const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdL4_vySt9irPcW0gNrJJX2-Wfq0X-UykXGirYQ4IC_LX-X-g/formResponse";
-    
-    // Create URLSearchParams for form data
-    const formData = new URLSearchParams();
-    formData.append("entry.25911088", data.name);
-    formData.append("entry.1052839930", data.email);
-    formData.append("entry.242468177", data.phone || "");
-    
-    // Map type to exact Google Form values provided in DOM
-    const typeMap: Record<string, string> = {
-      "subscription": "Subscription",
-      "training": "Training",
-      "products": "Products",
-      "general": "General Inquiry"
-    };
-    formData.append("entry.1135467792", typeMap[data.type] || "General Inquiry");
-    
-    formData.append("entry.1898327496", data.country);
-    formData.append("entry.315415258", data.state || "");
-    formData.append("entry.1018339571", data.message);
-
     try {
-      await fetch(GOOGLE_FORM_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: formData
-      });
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We will get back to you soon.",
-      });
+      await contactSubmit.mutateAsync(data);
       form.reset();
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again or contact us directly.",
-        variant: "destructive"
-      });
+      // Error toast notification is handled by the useContactSubmit hook
     } finally {
       setIsSubmitting(false);
     }
