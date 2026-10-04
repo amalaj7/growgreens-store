@@ -321,49 +321,49 @@ export default function Contact() {
       />
 
       <Section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Contact Info */}
           <div>
-            <h2 className="text-3xl mb-8">Contact Information</h2>
-            <div className="space-y-8 mb-12">
+            <h2 className="text-2.5xl sm:text-3xl mb-6 sm:mb-8 font-serif text-foreground">Contact Information</h2>
+            <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-secondary/30 rounded-full text-primary">
-                  <Phone className="w-6 h-6" />
+                <div className="p-3 bg-secondary/30 rounded-full text-primary shrink-0">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Phone</h3>
-                  <p className="text-muted-foreground">+91 73062 99044</p>
-                  <p className="text-sm text-muted-foreground mt-1">Mon-Sat 9am to 6pm</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-0.5 sm:mb-1 text-foreground">Phone</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base">+91 73062 99044</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground/80 mt-0.5">Mon-Sat 9am to 6pm</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-secondary/30 rounded-full text-primary">
-                  <Mail className="w-6 h-6" />
+                <div className="p-3 bg-secondary/30 rounded-full text-primary shrink-0">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Email</h3>
-                  <p className="text-muted-foreground">growgreensstore@gmail.com</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-0.5 sm:mb-1 text-foreground">Email</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base break-all sm:break-normal">growgreensstore@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-secondary/30 rounded-full text-primary">
-                  <MapPin className="w-6 h-6" />
+                <div className="p-3 bg-secondary/30 rounded-full text-primary shrink-0">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Location</h3>
-                  <p className="text-muted-foreground">South Chittoor, Ernakulam<br/>Kerala, India</p>
+                  <h3 className="font-bold text-base sm:text-lg mb-0.5 sm:mb-1 text-foreground">Location</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">South Chittoor, Ernakulam<br/>Kerala, India</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-secondary/30 rounded-full text-primary">
-                  <Instagram className="w-6 h-6" />
+                <div className="p-3 bg-secondary/30 rounded-full text-primary shrink-0">
+                  <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Social</h3>
-                  <a href="https://www.instagram.com/growgreensstore/?hl=en" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  <h3 className="font-bold text-base sm:text-lg mb-0.5 sm:mb-1 text-foreground">Social</h3>
+                  <a href="https://www.instagram.com/growgreensstore/?hl=en" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm sm:text-base">
                     @growgreensstore
                   </a>
                 </div>
@@ -372,8 +372,8 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
-            <h2 className="text-2xl mb-6">Send us a Message</h2>
+          <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-border/50">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6 text-foreground">Send us a Message</h2>
             
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

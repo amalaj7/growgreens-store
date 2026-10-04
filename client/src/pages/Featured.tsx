@@ -88,18 +88,16 @@ export default function Featured() {
         description="Read about Grow Greens in the news. Discover how our organic microgreens farm in Kochi, Kerala, India gained national and global recognition."
         keywords="microgreens india news, microgreens farm kochi featured, ajay gopinath microgreens, urban farming kerala, best microgreens farm india"
         path="/featured"
-      />
-
-      <div className="text-center mb-10 px-4 mt-8 md:mt-12 text-foreground">
+      />      <div className="text-center mb-8 sm:mb-12 px-4 mt-4 sm:mt-8 md:mt-12 text-foreground">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold mb-3 sm:mb-6">
             Featured In The Media
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Our journey from banking to sustainable farming has inspired many. 
             Discover the story of our microgreens farm across top publications and news channels.
           </p>
@@ -107,16 +105,16 @@ export default function Featured() {
       </div>
 
       {/* YOUTUBE VIDEOS SECTION */}
-      <Section bg="light" className="py-12 md:py-20 rounded-t-3xl">
-        <div className="flex flex-col items-center mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Youtube className="w-10 h-10 text-red-600" />
-            <h2 className="text-4xl font-bold tracking-tight">Media Presence</h2>
+      <Section bg="light" className="py-10 sm:py-16 rounded-t-3xl">
+        <div className="flex flex-col items-center mb-8 sm:mb-12 text-center">
+          <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-4">
+            <Youtube className="w-8 h-8 sm:w-10 sm:h-10 text-red-600 shrink-0" />
+            <h2 className="text-2.5xl sm:text-4xl font-bold font-serif tracking-tight">Media Presence</h2>
           </div>
-          <p className="text-muted-foreground">Watch our journey, farming tips, and media coverage</p>
+          <p className="text-muted-foreground text-xs sm:text-sm">Watch our journey, farming tips, and media coverage</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {youtubeVideos.map((video, i) => {
             return (
               <motion.a
@@ -126,7 +124,7 @@ export default function Featured() {
                 key={video.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
+                transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
                 whileHover={{ y: -5 }}
                 className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 bg-black cursor-pointer flex aspect-video"
               >
@@ -138,6 +136,7 @@ export default function Featured() {
                   }}
                   alt={`YouTube thumbnail`}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
                 
                 {/* Gradient overlay */}
@@ -145,19 +144,19 @@ export default function Featured() {
                 
                 {/* Center Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/20 p-4 rounded-full backdrop-blur-sm group-hover:bg-red-600/90 transition-all duration-300 transform group-hover:scale-110 shadow-xl">
-                    <PlayCircle className="text-white transition-all duration-300 w-10 h-10" fill="currentColor" />
+                  <div className="bg-white/20 p-3 sm:p-4 rounded-full backdrop-blur-sm group-hover:bg-red-600/90 transition-all duration-300 transform group-hover:scale-110 shadow-xl">
+                    <PlayCircle className="text-white transition-all duration-300 w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" />
                   </div>
                 </div>
 
                 {/* Tags and content */}
-                <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+                <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
                   <span /> {/* Spacer */}
                   {video.type === "short" && (
-                     <span className="bg-white/90 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1 ml-auto">
+                     <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 ml-auto">
                         <svg className="w-3 h-3 text-red-600" viewBox="0 0 24 24" fill="currentColor"><path d="M10 14.651L15.467 12 10 9.349v5.302zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/></svg>
                         Short
-                     </span>
+                      </span>
                   )}
                 </div>
               </motion.a>
@@ -167,16 +166,16 @@ export default function Featured() {
       </Section>
 
       {/* NEWS ARTICLES SECTION */}
-      <Section bg="white" className="py-12 md:py-20 rounded-t-3xl border-t border-border/40">
-        <div className="flex flex-col items-center mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Newspaper className="w-10 h-10 text-primary" />
-            <h2 className="text-4xl font-bold tracking-tight">In The News</h2>
+      <Section bg="white" className="py-10 sm:py-16 rounded-t-3xl border-t border-border/40">
+        <div className="flex flex-col items-center mb-8 sm:mb-12 text-center">
+          <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-4">
+            <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
+            <h2 className="text-2.5xl sm:text-4xl font-bold font-serif tracking-tight">In The News</h2>
           </div>
-          <p className="text-muted-foreground">Articles and stories covering our success</p>
+          <p className="text-muted-foreground text-xs sm:text-sm">Articles and stories covering our success</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {newsArticles.map((link, i) => (
             <motion.a
               href={link.url}
@@ -186,27 +185,27 @@ export default function Featured() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
               whileHover={{ y: -5 }}
-              className="bg-white border hover:border-primary/30 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col group h-full relative overflow-hidden"
+              className="bg-white border border-border/60 hover:border-primary/40 p-5 sm:p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all flex flex-col group h-full relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                 <Newspaper className="w-24 h-24" />
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                 <Newspaper className="w-20 h-20 sm:w-24 sm:h-24" />
               </div>
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <span className="text-[10px] md:text-xs font-bold tracking-wider uppercase text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+              <div className="flex justify-between items-start mb-3 sm:mb-4 relative z-10">
+                <span className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                   {link.source}
                 </span>
-                <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors font-sans text-foreground leading-snug relative z-10">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-primary transition-colors font-sans text-foreground leading-snug relative z-10">
                 {link.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mt-auto relative z-10 mb-4">
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mt-auto relative z-10 mb-4">
                 {link.description}
               </p>
               
-              <div className="mt-auto relative z-10 flex items-center text-primary text-sm font-semibold group-hover:underline">
+              <div className="mt-auto relative z-10 flex items-center text-primary text-xs sm:text-sm font-semibold group-hover:underline">
                 Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </motion.a>

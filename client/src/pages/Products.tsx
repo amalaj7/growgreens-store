@@ -55,54 +55,54 @@ export default function Products() {
       />
 
       <Section>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4 font-serif text-foreground">Everything You Need to Grow & Eat Healthy</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl mb-3 sm:mb-4 font-serif text-foreground">Everything You Need to Grow & Eat Healthy</h2>
+          <p className="text-muted-foreground text-sm sm:text-lg max-w-2xl mx-auto px-2">
             From our fresh local harvests delivered in Kochi to high-quality seeds, growing mediums, and custom setups shipped globally. Explore our full range of offerings.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {products.map((product, i) => {
             const Icon = product.icon;
             return (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
                 key={i}
-                className="bg-white rounded-2xl shadow-md p-6 border border-border/40 hover:shadow-xl transition-all group flex flex-col items-center text-center cursor-pointer relative"
+                className="bg-white rounded-2xl shadow-md p-5 sm:p-6 border border-border/40 hover:shadow-xl transition-all group flex flex-col items-center text-center cursor-pointer relative"
               >
-                <span className={`absolute top-4 right-4 text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                <span className={`absolute top-3.5 right-3.5 text-[10px] font-bold px-2 py-0.5 rounded-full ${
                   product.worldwide 
                     ? "bg-green-100 text-green-800 border border-green-200" 
                     : "bg-amber-100 text-amber-800 border border-amber-200"
                 }`}>
                   {product.worldwide ? "🌍 Global" : "📍 Local"}
                 </span>
-                <div className="bg-secondary/20 p-4 rounded-full mb-4 mt-2 group-hover:bg-primary transition-colors duration-300">
-                  <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                <div className="bg-secondary/20 p-3.5 sm:p-4 rounded-full mb-3 sm:mb-4 mt-2 group-hover:bg-primary transition-colors duration-300">
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{product.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1.5 sm:mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{product.desc}</p>
               </motion.div>
             );
           })}
         </div>
 
         {/* Gallery Sections */}
-        <div className="mt-24">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl mb-4 font-serif text-foreground">Explore Our Collections</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Get a closer look at what Grow Greens has to offer.</p>
+        <div className="mt-16 sm:mt-24">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl mb-3 sm:mb-4 font-serif text-foreground">Explore Our Collections</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">Get a closer look at what Grow Greens has to offer.</p>
           </div>
 
           {/* Microgreens & Millets Gallery */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
-              <Leaf className="w-8 h-8 text-primary" /> Live Microgreens & Millets Varieties
+          <div className="mb-14 sm:mb-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center flex items-center justify-center gap-2 sm:gap-3">
+              <Leaf className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" /> Live Microgreens & Millets Varieties
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-4">
               {Array.from({ length: 34 }).map((_, i) => (
                 <img key={`mg-${i}`} src={`/images/Pics/microgreens-varities%20(${i + 1}).jpg`} alt={`Live Microgreens ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
               ))}
@@ -111,11 +111,11 @@ export default function Products() {
           </div>
 
           {/* Edible Flowers Gallery */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
-              <Flower2 className="w-8 h-8 text-primary" /> Edible Flowers
+          <div className="mb-14 sm:mb-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center flex items-center justify-center gap-2 sm:gap-3">
+              <Flower2 className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" /> Edible Flowers
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2.5 sm:gap-4 max-w-6xl mx-auto">
               {Array.from({ length: 7 }).map((_, i) => (
                 <img key={`fl-${i}`} src={`/images/Pics/flowers%20(${i + 1}).jpg`} alt={`Edible Flower ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
               ))}
@@ -123,25 +123,23 @@ export default function Products() {
           </div>
 
           {/* Sprouts Gallery */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
-              <Sprout className="w-8 h-8 text-primary" /> Fresh Sprouts
+          <div className="mb-14 sm:mb-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center flex items-center justify-center gap-2 sm:gap-3">
+              <Sprout className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" /> Fresh Sprouts
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-4 max-w-6xl mx-auto">
               {[1, 2, 4, 5, 6, 8, 9].map((num) => (
                 <img key={`sp-${num}`} src={`/images/Pics/sprouts%20(${num}).jpg`} alt={`Sprouts ${num}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
               ))}
             </div>
           </div>
 
-
-
           {/* Seeds Gallery */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
-              <PackageOpen className="w-8 h-8 text-primary" /> Premium Seeds
+          <div className="mb-14 sm:mb-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center flex items-center justify-center gap-2 sm:gap-3">
+              <PackageOpen className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" /> Premium Seeds
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-4 max-w-6xl mx-auto">
               {Array.from({ length: 11 }).map((_, i) => (
                 <img key={`se-${i}`} src={`/images/Pics/seeds%20(${i + 1}).jpg`} alt={`Seeds ${i + 1}`} className="rounded-xl object-cover w-full aspect-square shadow-sm hover:scale-105 transition-transform" loading="lazy" />
               ))}
@@ -150,10 +148,10 @@ export default function Products() {
 
           {/* Small Farm Model Gallery */}
           <div className="mb-10">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
-              <Home className="w-8 h-8 text-primary" /> Small Farm Model (Home Installation)
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8 text-center flex items-center justify-center gap-2 sm:gap-3">
+              <Home className="w-6 h-6 sm:w-8 sm:h-8 text-primary shrink-0" /> Small Farm Model (Home Installation)
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
               {Array.from({ length: 4 }).map((_, i) => (
                 <img key={`hi-${i}`} src={`/images/Pics/home-installation-${i + 1}.jpg`} alt={`Home Installation ${i + 1}`} className="rounded-xl object-cover w-full aspect-[4/3] shadow-sm hover:scale-105 transition-transform" loading="lazy" />
               ))}
@@ -165,15 +163,15 @@ export default function Products() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 text-center bg-secondary/10 rounded-3xl p-12 border border-secondary/20"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-14 sm:mt-20 text-center bg-secondary/20 rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-secondary/30"
         >
-          <h2 className="text-3xl font-bold mb-4">Interested in our products?</h2>
-          <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+          <h2 className="text-2.5xl sm:text-3xl font-bold mb-3 sm:mb-4">Interested in our products?</h2>
+          <p className="text-muted-foreground text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed">
             Get in touch with us for local subscriptions, bulk local deliveries, global export orders, or custom farm setup packages.
           </p>
           <Link href="/contact?type=products">
-            <Button size="lg" className="rounded-full px-8 py-6 text-lg font-semibold group">
+            <Button size="lg" className="w-full sm:w-auto rounded-full px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group shadow-md">
               Contact Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

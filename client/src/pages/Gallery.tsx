@@ -49,24 +49,25 @@ export default function Gallery() {
       />
 
       <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {galleryImages.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (index % 6) * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl h-80 cursor-pointer shadow-md"
+              transition={{ duration: 0.4, delay: (index % 6) * 0.05 }}
+              className="group relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-[4/3] md:h-72 lg:h-80 cursor-pointer shadow-md border border-border/40"
             >
               <img 
                 src={item.src} 
                 alt={item.label}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white text-xl font-bold">{item.label}</h3>
-                <p className="text-white/80 text-sm">{item.category}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
+                <h3 className="text-white text-lg sm:text-xl font-bold leading-tight">{item.label}</h3>
+                <p className="text-white/80 text-xs sm:text-sm">{item.category}</p>
               </div>
             </motion.div>
           ))}

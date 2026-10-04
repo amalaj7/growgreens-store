@@ -187,7 +187,7 @@ const varieties = [
 
 export default function Subscription() {
   return (
-    <div className="w-full bg-gray-50 pt-24">
+    <div className="w-full bg-background pt-20 sm:pt-24">
       <SEO 
         title="Microgreens Subscription | Fresh Greens Delivery in Kochi, India" 
         description="Subscribe for fresh, organic microgreens delivery near me in Kochi, Kerala, India. Weekly delivery of 11 nutrient-rich varieties for your health."
@@ -211,61 +211,65 @@ export default function Subscription() {
         }}
       />
       {/* Subscription Model Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-3">Subscription Model</h2>
-        <p className="text-center text-gray-600 mb-12">Fresh microgreens & fresh produce delivered weekly at an affordable price</p>
+      <div className="max-w-6xl mx-auto px-4 py-10 sm:py-16">
+        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-center mb-3 text-primary">Subscription Model</h1>
+        <p className="text-center text-muted-foreground text-sm sm:text-base mb-8 sm:mb-12 max-w-xl mx-auto">Fresh microgreens & fresh produce delivered weekly at an affordable price</p>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {/* Monthly Plan Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="mb-6">
-              <h3 className="text-3xl font-bold mb-2">Monthly Plan</h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-green-600 text-4xl font-bold">From ₹599</span>
-                <span className="text-gray-600">per month</span>
+          <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8 border border-border/50 flex flex-col justify-between">
+            <div>
+              <div className="mb-6">
+                <h3 className="text-2.5xl sm:text-3xl font-bold mb-2 text-foreground font-serif">Monthly Plan</h3>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-primary text-3xl sm:text-4xl font-extrabold">From ₹599</span>
+                  <span className="text-muted-foreground text-sm sm:text-base">per month</span>
+                </div>
+              </div>
+              
+              <p className="text-foreground font-medium text-sm sm:text-base mb-6">Everything you need for a healthy lifestyle</p>
+              
+              <div className="space-y-4 mb-8">
+                {subscriptionFeatures.map((f) => (
+                  <div key={f.title} className="flex items-start gap-3">
+                    <div className="bg-secondary/40 rounded-full p-2 text-base sm:text-lg shrink-0">{f.icon}</div>
+                    <div>
+                      <div className="font-semibold text-foreground text-sm sm:text-base">{f.title}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm">{f.description}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
-            <p className="text-gray-700 font-medium mb-6">Everything you need for a healthy lifestyle</p>
-            
-            <div className="space-y-4 mb-8">
-              {subscriptionFeatures.map((f) => (
-                <div key={f.title} className="flex items-start gap-3">
-                  <div className="bg-green-100 rounded-full p-2 text-lg">{f.icon}</div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{f.title}</div>
-                    <div className="text-gray-600 text-sm">{f.description}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
             <Link href="/contact?type=subscription">
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-lg transition duration-200">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 text-base sm:text-lg rounded-xl transition-all shadow-md">
                 Subscribe Now
               </Button>
             </Link>
           </div>
 
           {/* What's Included Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h4 className="text-2xl font-bold mb-6">What's Included</h4>
+          <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8 border border-border/50 flex flex-col justify-between">
+            <div>
+              <h4 className="text-xl sm:text-2xl font-bold mb-6 font-serif text-foreground">What's Included</h4>
+              
+              <ul className="space-y-3 mb-8">
+                {includedFeatures.map((f) => (
+                  <li key={f} className="flex items-center gap-3">
+                    <span className="text-primary text-lg font-bold">✔</span>
+                    <span className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             
-            <ul className="space-y-3 mb-8">
-              {includedFeatures.map((f) => (
-                <li key={f} className="flex items-center gap-3">
-                  <span className="text-green-600 text-lg">✔</span>
-                  <span className="text-gray-700">{f}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="bg-green-600 text-white rounded-xl p-8 text-center shadow-inner">
-              <div className="text-6xl font-extrabold drop-shadow-md">11</div>
-              <div className="text-xl font-bold mt-2 tracking-wide">Varieties Available</div>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="bg-primary text-white rounded-2xl p-6 sm:p-8 text-center shadow-inner">
+              <div className="text-5xl sm:text-6xl font-extrabold drop-shadow-md">11</div>
+              <div className="text-lg sm:text-xl font-bold mt-1 tracking-wide">Varieties Available</div>
+              <div className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-2.5">
                 {varieties.map((v) => (
-                  <span key={v.name} className="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-full text-sm font-semibold shadow-sm backdrop-blur-sm cursor-default">
+                  <span key={v.name} className="px-3 sm:px-3.5 py-1 sm:py-1.5 bg-white/15 hover:bg-white/25 transition-colors rounded-full text-xs sm:text-sm font-medium shadow-sm backdrop-blur-sm">
                     {v.name}
                   </span>
                 ))}
@@ -275,24 +279,24 @@ export default function Subscription() {
         </div>
       </div>
 
-      {/* Choose Your Varieties Section - Featured in Subscription */}
-      <div className="max-w-6xl mx-auto px-4 py-16 bg-white">
-        <h2 className="text-4xl font-bold text-center mb-3">Choose Your Varieties</h2>
-        <p className="text-center text-gray-600 mb-12">11 carefully cultivated varieties of fresh microgreens, each packed with nutrients and flavor</p>
+      {/* Choose Your Varieties Section */}
+      <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16 border-t border-border/40">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-3 text-foreground">Choose Your Varieties</h2>
+        <p className="text-center text-muted-foreground text-sm sm:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">11 carefully cultivated varieties of fresh microgreens, each packed with nutrients and flavor</p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {varieties.map((variety) => (
-            <div key={variety.name} className="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-              <div className="relative h-48 bg-gradient-to-br from-green-200 to-green-100 overflow-hidden">
+            <div key={variety.name} className="bg-white rounded-2xl shadow-md border border-border/40 overflow-hidden hover:shadow-xl transition-all group">
+              <div className="relative h-44 sm:h-48 bg-secondary/30 overflow-hidden">
                 <img 
                   src={variety.image} 
                   alt={variety.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-4">
-                <h5 className="font-bold text-gray-900 mb-1">{variety.name}</h5>
-                <p className="text-gray-600 text-sm">{variety.desc}</p>
+              <div className="p-4 sm:p-5">
+                <h5 className="font-bold text-foreground mb-1 text-base sm:text-lg group-hover:text-primary transition-colors">{variety.name}</h5>
+                <p className="text-muted-foreground text-xs sm:text-sm">{variety.desc}</p>
               </div>
             </div>
           ))}
@@ -300,33 +304,33 @@ export default function Subscription() {
       </div>
 
       {/* Why Choose Grow Greens Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16 border-t border-gray-200">
-        <h2 className="text-4xl font-bold text-center mb-3">Why Choose Grow Greens?</h2>
-        <p className="text-center text-gray-600 mb-12">Quality, safety, and sustainability in every box</p>
+      <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16 border-t border-border/40">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-3 text-foreground">Why Choose Grow Greens?</h2>
+        <p className="text-center text-muted-foreground text-sm sm:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">Quality, safety, and sustainability in every box</p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {whyChoose.map((item) => (
-            <div key={item.title} className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
-              <div className="text-4xl mb-3">{item.icon}</div>
-              <h5 className="font-bold text-gray-900 mb-2">{item.title}</h5>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
+            <div key={item.title} className="bg-white rounded-xl shadow-md p-5 sm:p-6 text-center hover:shadow-lg transition border border-border/40">
+              <div className="text-3xl sm:text-4xl mb-3">{item.icon}</div>
+              <h5 className="font-bold text-foreground mb-2 text-base sm:text-lg">{item.title}</h5>
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Importance of Microgreens Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16 border-t border-gray-200">
-        <h2 className="text-4xl font-bold text-center mb-3">Importance of Microgreens in Our Daily Life</h2>
-        <p className="text-center text-gray-600 mb-12">Discover why microgreens are essential for modern nutrition and wellness</p>
+      <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16 border-t border-border/40 mb-12">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-3 text-foreground">Importance of Microgreens in Our Daily Life</h2>
+        <p className="text-center text-muted-foreground text-sm sm:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">Discover why microgreens are essential for modern nutrition and wellness</p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {importance.map((item) => (
-            <div key={item.title} className="bg-white rounded-xl shadow-md p-6 flex items-start gap-4 hover:shadow-lg transition">
-              <div className="text-3xl flex-shrink-0">{item.icon}</div>
+            <div key={item.title} className="bg-white rounded-xl shadow-md p-5 sm:p-6 flex items-start gap-4 hover:shadow-lg transition border border-border/40">
+              <div className="text-2.5xl sm:text-3xl flex-shrink-0">{item.icon}</div>
               <div>
-                <h5 className="font-bold text-gray-900 mb-2">{item.title}</h5>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <h5 className="font-bold text-foreground mb-1.5 text-base sm:text-lg">{item.title}</h5>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}

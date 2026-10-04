@@ -54,78 +54,82 @@ export default function Training() {
 
       <Section>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl mb-6">Empowering New Farmers</h2>
-            <p className="text-xl text-muted-foreground">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl mb-4 font-serif text-foreground">Empowering New Farmers</h2>
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               We don't just grow greens; we grow farmers. Join our comprehensive workshops to learn how to cultivate your own superfoods at home or for business — available locally in Kochi and live online worldwide.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
-              <div className="mb-6 flex flex-wrap gap-2">
-                <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Beginner Friendly</span>
-                <span className="bg-white text-muted-foreground border border-border font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Home Growing Workshop</h3>
-              <p className="text-muted-foreground mb-6">
-                Perfect for hobbyists who want to grow healthy greens for their family. Learn the basics of seeds, medium, and care — available as in-person sessions in Kochi or live online globally.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Introduction to Microgreens",
-                  "Seed Selection & Soaking",
-                  "Soil-less Mediums",
-                  "Harvesting Techniques"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 mb-6">
-                <p className="text-sm font-semibold text-primary mb-3">
-                  Includes small farm model starting with trays and seeds.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 items-stretch">
+            <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-border/50 flex flex-col justify-between">
+              <div>
+                <div className="mb-4 sm:mb-6 flex flex-wrap gap-2">
+                  <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Beginner Friendly</span>
+                  <span className="bg-muted text-muted-foreground border border-border font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4 text-foreground">Home Growing Workshop</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-6">
+                  Perfect for hobbyists who want to grow healthy greens for their family. Learn the basics of seeds, medium, and care — available as in-person sessions in Kochi or live online globally.
                 </p>
-                <div className="grid grid-cols-2 gap-2">
-                  <img src="/images/Pics/home-installation-1.jpg" alt="Home Installation 1" className="rounded-lg object-cover aspect-square" />
-                  <img src="/images/Pics/home-installation-2.jpg" alt="Home Installation 2" className="rounded-lg object-cover aspect-square" />
-                  <img src="/images/Pics/home-installation-3.jpg" alt="Home Installation 3" className="rounded-lg object-cover aspect-square" />
-                  <img src="/images/Pics/home-installation-4.jpg" alt="Home Installation 4" className="rounded-lg object-cover aspect-square" />
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "Introduction to Microgreens",
+                    "Seed Selection & Soaking",
+                    "Soil-less Mediums",
+                    "Harvesting Techniques"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-xs sm:text-sm font-medium text-foreground">
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="bg-secondary/20 border border-secondary/30 rounded-xl p-3 sm:p-4 mb-6">
+                  <p className="text-xs sm:text-sm font-semibold text-primary mb-3">
+                    Includes small farm model starting with trays and seeds.
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <img src="/images/Pics/home-installation-1.jpg" alt="Home Installation 1" className="rounded-lg object-cover aspect-square" />
+                    <img src="/images/Pics/home-installation-2.jpg" alt="Home Installation 2" className="rounded-lg object-cover aspect-square" />
+                    <img src="/images/Pics/home-installation-3.jpg" alt="Home Installation 3" className="rounded-lg object-cover aspect-square" />
+                    <img src="/images/Pics/home-installation-4.jpg" alt="Home Installation 4" className="rounded-lg object-cover aspect-square" />
+                  </div>
                 </div>
               </div>
               <Link href="/contact?type=training">
-                <Button className="w-full mt-4">Enquire Now</Button>
+                <Button className="w-full py-5 text-base rounded-xl font-bold">Enquire Now</Button>
               </Link>
             </div>
 
-            <div className="bg-primary text-primary-foreground p-8 rounded-2xl shadow-lg relative overflow-hidden">
+            <div className="bg-primary text-primary-foreground p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg relative overflow-hidden flex flex-col justify-between">
               <div className="absolute top-0 right-0 p-32 bg-secondary/10 rounded-full blur-3xl transform translate-x-10 -translate-y-10"></div>
-              <div className="mb-6 relative z-10 flex flex-wrap gap-2">
-                <span className="bg-white text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Professional</span>
-                <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
+              <div>
+                <div className="mb-4 sm:mb-6 relative z-10 flex flex-wrap gap-2">
+                  <span className="bg-white text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">Professional</span>
+                  <span className="bg-secondary text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide">🌍 Global & Local</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4 relative z-10 text-white">Commercial Farming Masterclass</h3>
+                <p className="text-primary-foreground/80 text-xs sm:text-sm leading-relaxed mb-6 relative z-10">
+                  For those looking to start a microgreens business. Includes business planning, scaling, and market strategies.
+                </p>
+                <ul className="space-y-3 mb-8 relative z-10">
+                  {[
+                    "Advanced Growing Techniques",
+                    "Infrastructure Setup",
+                    "Pest & Disease Management",
+                    "Marketing & Sales Strategies"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-xs sm:text-sm font-medium">
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold mb-4 relative z-10 text-white">Commercial Farming Masterclass</h3>
-              <p className="text-primary-foreground/80 mb-6 relative z-10">
-                For those looking to start a microgreens business. Includes business planning, scaling, and market strategies.
-              </p>
-              <ul className="space-y-3 mb-8 relative z-10">
-                {[
-                  "Advanced Growing Techniques",
-                  "Infrastructure Setup",
-                  "Pest & Disease Management",
-                  "Marketing & Sales Strategies"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-secondary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8 relative z-10">
                 <Link href="/contact?type=training">
-                  <Button variant="secondary" className="w-full relative z-10 font-bold">Contact Us</Button>
+                  <Button variant="secondary" className="w-full py-5 text-base rounded-xl font-bold text-primary hover:bg-white">Contact Us</Button>
                 </Link>
               </div>
             </div>
